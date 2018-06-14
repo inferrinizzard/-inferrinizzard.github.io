@@ -2,7 +2,7 @@
     background-color: #5DC094;
     margin-bottom: 0;
     border-radius: 0;
-    color: white;
+    color: #e6e7e8;
     padding: 1% 0;
     font-size: 1.2em;
     border: 0;
@@ -23,12 +23,12 @@
   }
 
   .navbar-inverse .navbar-nav .active a,.navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
-    color: white;
+    color: #e6e7e8;
     background-color: #5DC094;
   }
 
   .navbar-inverse .navbar-nav li a{
-    color: white;
+    color: #e6e7e8;
     font-size: 18pt;
   }
 
@@ -50,14 +50,14 @@
 
   .btn{
     font-size: 18px;
-    color: white;
+    color: #e6e7e8;
     padding: 12px 22px;
     background: #5DC094;
     border: 2px solid;
   }
 
   .btn:hover{
-    color: white;
+    color: #e6e7e8;
     background-color: #268f65;
     border: 2px solid;
   }
@@ -80,7 +80,7 @@
   .fa{
     padding: 20px;
     font-size: 42px;
-    color: white;
+    color: #e6e7e8;
   }
 
   .fa:hover{
@@ -95,7 +95,7 @@
   footer{
     width: 100%;
     background-color: #5DC094;
-    color: white;
+    color: #e6e7e8;
     padding: 1%;
   }
 
