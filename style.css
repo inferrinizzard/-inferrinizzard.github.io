@@ -19,7 +19,7 @@
   }
 
   .navbar-brand img{
-    width: 25%;
+    max-width: 25%;
   }
 
   .navbar-inverse .navbar-nav .active a,.navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
@@ -118,7 +118,7 @@
   }
 
   #logo{
-    max-width: 100%;
+    max-width: 25%;
   }
 
   @media (max-width: 600px){
