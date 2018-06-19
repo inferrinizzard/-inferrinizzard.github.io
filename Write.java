@@ -21,30 +21,24 @@ class Write{
         List<String> htmlFile = new ArrayList<String>();
 
         try{
-            // Open the file that is the first 
-            // command line parameter
             FileInputStream fStream = new FileInputStream("template.html");
-            // Get the object of DataInputStream
             DataInputStream in = new DataInputStream(fStream);
             BufferedReader br = new BufferedReader(new InputStreamReader(in));
             String strLine;
-            //Read File Line By Line
             while ((strLine = br.readLine()) != null){
-                // Print the content on the console
                 htmlFile.add(strLine);
             }
-            //Close the input stream
             in.close();
         }
         catch (Exception e){//Catch exception if any
             System.err.println("Error: " + e.getMessage());
         }
 
-        String title = content.get(1);
-        String date = content.get(2);
-        String video = content.get(3);
-        String body = content.get(4);
-        // String count = content.get(0);
+        String title = content.get(0);
+        String date = content.get(1);
+        String video = content.get(2);
+        String body = content.get(3);
+        // String count = content.get(4);
 
         for(int i=0;i<htmlFile.size();i++){
             String temp = htmlFile.get(i);
@@ -56,7 +50,7 @@ class Write{
         }
 
         try{
-            FileWriter fWriter = new FileWriter(title+".html");
+            FileWriter fWriter = new FileWriter("posts/"+title+".html");
             BufferedWriter writer = new BufferedWriter(fWriter);
             for (String s : htmlFile) {
                 writer.write(s);

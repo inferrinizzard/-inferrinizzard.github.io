@@ -41,7 +41,7 @@
   </nav>
 
   <div class="main">
-    <form action="php file here">
+    <form action="writetext.php" method="POST">
         Post Title:
         <input type="text" name="title">
         <br>
@@ -54,8 +54,21 @@
         Text body:
         <input type="text" name="body">
         <br>
-        <input type="submit">
+        <input type="submit" value="Write to Text">
     </form>
+
+    <script lang="php" title="writetext.php">
+        $post = fopen("post.txt","w");
+        $title = $_POST['title'];
+        $date = $_POST['date'];
+        $video = $_POST['video'];
+        $body = $_POST['body'];
+        fwrite($post,$title);
+        fwrite($post,$date);
+        fwrite($post,$video);
+        fwrite($post,$body);
+        fclose($post);
+    </script>
   </div>
 
   <footer class="container-fluid text-center">
