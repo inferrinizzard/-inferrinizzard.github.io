@@ -1,55 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-form * {
-  display: block;
-  margin: 10px;
-}
-</style>
-<div class="main">
-  <!-- <form action="writetext.php" method="POST">
-      Post Title:
-      <input type="text" name="title">
-      <br>
-      Date:
-      <input type="text" name="date">
-      <br>
-      Video:
-      <input type="text" name="video">
-      <br>
-      Text body:
-      <input type="text" name="body">
-      <br>
-      <input type="submit" value="Write to Text">
-  </form> -->
-  <table>
-    <tr><td>Text to Save:</td></tr>
-    <tr>
-        <td colspan="3">
-            <textarea id="inputTextToSave" cols="80" rows="25"></textarea>
-        </td>
-    </tr>
-    <tr>
-        <td>Filename to Save As:</td>
-        <td><input id="inputFileNameToSaveAs"></input></td>
-        <td><button onclick="saveTextAsFile()">Save Text to File</button></td>
-    </tr>
-    <tr>
-        <td>Select a File to Load:</td>
-        <td><input type="file" id="fileToLoad"></td>
-        <td><button onclick="loadFileAsText()">Load Selected File</button><td>
-    </tr>
-</table>
- 
-<script type="js">
- 
 function saveTextAsFile(){
     var textToSave = document.getElementById("inputTextToSave").value;
     var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
     var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
- 
+
     var downloadLink = document.createElement("a");
     downloadLink.download = fileNameToSaveAs;
     downloadLink.innerHTML = "Download File";
@@ -57,17 +11,17 @@ function saveTextAsFile(){
     downloadLink.onclick = destroyClickedElement;
     downloadLink.style.display = "none";
     document.body.appendChild(downloadLink);
- 
+
     downloadLink.click();
 }
- 
+
 function destroyClickedElement(event){
     document.body.removeChild(event.target);
 }
- 
+
 function loadFileAsText(){
     var fileToLoad = document.getElementById("fileToLoad").files[0];
- 
+
     var fileReader = new FileReader();
     fileReader.onload = function(fileLoadedEvent) 
     {
@@ -76,8 +30,3 @@ function loadFileAsText(){
     };
     fileReader.readAsText(fileToLoad, "UTF-8");
 }
- 
-</script>
-</div>
-</body>
-</html>
