@@ -1,44 +1,21 @@
 import java.io.*;
 import java.util.*;
-class Write{
+
+import org.omg.PortableInterceptor.INACTIVE;
+public class Write{
     public static void main(String args[]){
-        List<String> content = new ArrayList<String>();
+        List<String> content = buffRead("post.txt");
 
-        try{
-            FileInputStream fStream = new FileInputStream("post.txt");
-            DataInputStream in = new DataInputStream(fStream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in));
-            String strLine;
+        List<String> htmlFile = buffRead("template.html");
 
-            while((strLine = br.readLine())!=null)
-                content.add(strLine);
-            in.close();
-        }
-        catch (Exception e){//Catch exception if any
-            System.err.println("Error: " + e.getMessage());
-        }
-
-        List<String> htmlFile = new ArrayList<String>();
-
-        try{
-            FileInputStream fStream = new FileInputStream("template.html");
-            DataInputStream in = new DataInputStream(fStream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in));
-            String strLine;
-            while ((strLine = br.readLine()) != null){
-                htmlFile.add(strLine);
-            }
-            in.close();
-        }
-        catch (Exception e){//Catch exception if any
-            System.err.println("Error: " + e.getMessage());
-        }
+        List<String> fresh = buffRead("fresh.txt");
 
         String title = content.get(0);
         String date = content.get(1);
         String video = content.get(2);
         String body = content.get(3);
-        // String count = content.get(4);
+        String count = fresh.get(4);
+
 
         for(int i=0;i<htmlFile.size();i++){
             String temp = htmlFile.get(i);
@@ -46,13 +23,42 @@ class Write{
             temp =  temp.replace("$date", date);
             temp =  temp.replace("$video", video);
             temp =  temp.replace("$body", body);
+            temp =  temp.replace("$count", count);
             htmlFile.set(i,temp);
         }
+        buffWrite(htmlFile, "posts/"+title+".html");
 
+        int num = Integer.parseInt(count);
+        fresh.set(4,Integer.toString(num+1));
+        buffWrite(fresh, "fresh.txt");
+        fresh.remove(4);
+        buffWrite(fresh, "post.txt");
+    }
+
+    static List<String> buffRead(String url){
+        List<String> text = new ArrayList<String>();
         try{
-            FileWriter fWriter = new FileWriter("posts/"+title+".html");
+            FileInputStream fStream = new FileInputStream(url);
+            DataInputStream in = new DataInputStream(fStream);
+            BufferedReader br = new BufferedReader(new InputStreamReader(in));
+            String strLine;
+
+            while((strLine = br.readLine())!=null)
+                text.add(strLine);
+            in.close();
+        }
+        catch (Exception e){//Catch exception if any
+            System.err.println("Error: " + e.getMessage());
+        }
+        return text;
+    }
+
+    static boolean buffWrite(List<String> text, String url){
+        boolean success = true;
+        try{
+            FileWriter fWriter = new FileWriter(url);
             BufferedWriter writer = new BufferedWriter(fWriter);
-            for (String s : htmlFile) {
+            for (String s : text) {
                 writer.write(s);
                 writer.newLine();
             }
@@ -60,6 +66,8 @@ class Write{
         }
         catch (Exception e){//Catch exception if any
             System.err.println("Error: " + e.getMessage());
+            success = false;
         }
+        return success;
     }
 }
