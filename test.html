@@ -1,83 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-form * {
-  display: block;
-  margin: 10px;
-}
-</style>
-<div class="main">
-  <!-- <form action="writetext.php" method="POST">
-      Post Title:
-      <input type="text" name="title">
-      <br>
-      Date:
-      <input type="text" name="date">
-      <br>
-      Video:
-      <input type="text" name="video">
-      <br>
-      Text body:
-      <input type="text" name="body">
-      <br>
-      <input type="submit" value="Write to Text">
-  </form> -->
-  <table>
-    <tr><td>Text to Save:</td></tr>
-    <tr>
-        <td colspan="3">
-            <textarea id="inputTextToSave" cols="80" rows="25"></textarea>
-        </td>
-    </tr>
-    <tr>
-        <td>Filename to Save As:</td>
-        <td><input id="inputFileNameToSaveAs"></input></td>
-        <td><button onclick="saveTextAsFile()">Save Text to File</button></td>
-    </tr>
-    <tr>
-        <td>Select a File to Load:</td>
-        <td><input type="file" id="fileToLoad"></td>
-        <td><button onclick="loadFileAsText()">Load Selected File</button><td>
-    </tr>
-</table>
- 
-<script type="js">
- 
-function saveTextAsFile(){
-    var textToSave = document.getElementById("inputTextToSave").value;
-    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
-    var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-    var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
- 
-    var downloadLink = document.createElement("a");
-    downloadLink.download = fileNameToSaveAs;
-    downloadLink.innerHTML = "Download File";
-    downloadLink.href = textToSaveAsURL;
-    downloadLink.onclick = destroyClickedElement;
-    downloadLink.style.display = "none";
-    document.body.appendChild(downloadLink);
- 
-    downloadLink.click();
-}
- 
-function destroyClickedElement(event){
-    document.body.removeChild(event.target);
-}
- 
-function loadFileAsText(){
-    var fileToLoad = document.getElementById("fileToLoad").files[0];
- 
-    var fileReader = new FileReader();
-    fileReader.onload = function(fileLoadedEvent) 
-    {
-        var textFromFileLoaded = fileLoadedEvent.target.result;
-        document.getElementById("inputTextToSave").value = textFromFileLoaded;
-    };
-    fileReader.readAsText(fileToLoad, "UTF-8");
-}
- 
-</script>
-</div>
+	<script type="text/javascript">
+	function includeHTML() {
+			var z, i, elmnt, file, xhttp;
+			/*loop through a collection of all HTML elements:*/
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+					elmnt = z[i];
+					/*search for elements with a certain atrribute:*/
+					file = elmnt.getAttribute("include-html");
+					if (file) {
+							/*make an HTTP request using the attribute value as the file name:*/
+							xhttp = new XMLHttpRequest();
+							xhttp.onreadystatechange = function() {
+									if (this.readyState == 4) {
+											if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+											if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+											/*remove the attribute, and call this function once more:*/
+											elmnt.removeAttribute("include-html");
+											includeHTML();
+									}
+							} 
+							xhttp.open("GET", file, true);
+							xhttp.send();
+							/*exit the function:*/
+							return;
+					}
+			}
+	}
+	</script>
+</head>
+
+<body>
+  <div include-html="nav.html"></div>
+
+  <div class="main">
+    <table>
+      <tr><td>Text to Save:</td></tr>
+      <tr>
+          <td colspan="3">
+              <textarea id="inputTextToSave" cols="80" rows="25"></textarea>
+          </td>
+      </tr>
+      <tr>
+          <td>Filename to Save As:</td>
+          <td><input id="inputFileNameToSaveAs"></input></td>
+          <td><button onclick="saveTextAsFile()">Save Text to File</button></td>
+      </tr>
+      <tr>
+          <td>Select a File to Load:</td>
+          <td><input type="file" id="fileToLoad"></td>
+          <td><button onclick="loadFileAsText()">Load Selected File</button><td>
+      </tr>
+    </table>
+
+    <!-- footer -->
+	</div>
+	
+	<script>
+		includeHTML();
+	</script>
 </body>
 </html>
