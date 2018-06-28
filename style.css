@@ -92,7 +92,10 @@
   }
 
   .fa:hover{
-    color: #D5D5D5;
+    background-color: #268f65;
+    border-radius: 5px;
+    box-shadow: 2px #00613a;
+    color: white;
     text-decoration: none;
   }
 
