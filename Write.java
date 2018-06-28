@@ -31,8 +31,8 @@ public class Write{
         int num = Integer.parseInt(count);
         fresh.set(4,Integer.toString(num+1));
         buffWrite(fresh, "fresh.txt");
-        fresh.remove(4);
-        buffWrite(fresh, "post.txt");
+        File postFile = new File("post.txt");
+        postFile.delete();
     }
 
     static List<String> buffRead(String url){
