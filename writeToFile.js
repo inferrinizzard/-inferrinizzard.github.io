@@ -1,6 +1,11 @@
 function saveTextAsFile(){
-    var textToSave = document.getElementById("inputTextToSave").value;
-    var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
+    var title = document.getElementById("title").value;
+    var date = document.getElementById("date").value;
+    var video = document.getElementById("video").value;
+    var body = document.getElementById("body").value;
+    var text = [title,date,video,body].join(" $ ") + " $ ";
+
+    var textToSaveAsBlob = new Blob([text], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
     var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
 

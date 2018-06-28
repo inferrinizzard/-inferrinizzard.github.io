@@ -19,33 +19,7 @@
   <div class="main">
 		<br>
 		<table>
-			<tr><td>Text to Save:</td></tr>
-			<tr>
-				<td colspan="3">
-					<textarea id="inputTextToSave" cols="80" rows="25"></textarea>
-				</td>
-			</tr>
-			<tr>
-				<td>Filename to Save As:</td>
-				<td><input id="inputFileNameToSaveAs" value="post.txt"></input></td>
-				<td><button onclick="saveTextAsFile()">Save Text to File</button></td>
-			</tr>
-			<tr>
-				<td>Select a File to Load:</td>
-				<td><input type="file" id="fileToLoad"></td>
-				<td><button onclick="loadFileAsText()">Load Selected File</button><td>
-			</tr>
-		</table>
-	
-		<script type="text/javascript" src="writeToFile.js"></script>
-  </div>
-
-	<div include-html="footer.html"></div>
-	<script>includeHTML();</script>
-</body>
-</html>
-
-<!-- <tr><td>New Post:</td></tr>
+			<tr><td>New Post:</td></tr>
 			<tr>
 				<td>
 					<input type="text" id="title" placeholder="Title"></input>
@@ -65,4 +39,23 @@
 				<td colspan="3">
 					<input type="text" id="body" placeholder="Text Body"></input>
 				</td>
-			</tr> -->
+			</tr>
+				<td>Filename to Save As:</td>
+				<td><input id="inputFileNameToSaveAs" value="post.txt"></input></td>
+				<td><button onclick="saveTextAsFile()">Save Text to File</button></td>
+			</tr>
+			<tr>
+				<td>Select a File to Load:</td>
+				<td><input type="file" id="fileToLoad"></td>
+				<td><button onclick="loadFileAsText()">Load Selected File</button><td>
+			</tr>
+		</table>
+	
+		<script type="text/javascript" src="writeToFile.js"></script>
+  </div>
+
+	<div include-html="footer.html"></div>
+	<script>includeHTML();</script>
+</body>
+</html>
+
