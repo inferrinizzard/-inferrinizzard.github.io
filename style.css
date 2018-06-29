@@ -49,6 +49,10 @@
     text-transform: initial;
   }
 
+  .collapse .navbar-collapse{
+    vertical-align: top;
+  }
+
   .btn{
     font-size: 24px;
     color: #e6e7e8;
@@ -133,9 +137,6 @@
     }
     #icon{
       max-width: 150px;
-    }
-    #logo{
-      max-width: 100%;
     }
     h2{
       font-size: 1.9em;
