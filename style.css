@@ -129,7 +129,13 @@
     max-height: 60px;
   }
 
-  @media (max-width: 600px){
+  @media (max-width: 768px){
+    .collapse.navbar-collapse{
+      display: none;
+    }
+    .navbar-toggle{
+      display: inherit;
+    }
     .carousel-caption{
       display: none;
     }

@@ -6,7 +6,7 @@
     margin: 0 4%;
 }
 
-@media (max-width: 600px){
+@media (max-width: 768px){
     .main .container-fluid{
         margin: 0.5%;
     }
