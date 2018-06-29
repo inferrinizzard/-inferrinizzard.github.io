@@ -19,7 +19,7 @@
   }
 
   .navbar-brand img{
-    max-width: 25%;
+    max-height: inherit;
   }
 
   .navbar-inverse .navbar-nav .active a,.navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{

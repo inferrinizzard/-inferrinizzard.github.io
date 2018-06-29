@@ -1,14 +1,13 @@
-.container{
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
 .count{
     text-align: right;
 }
 
+.container-fluid{
+    margin: 0 4%;
+}
+
 @media (max-width: 600px){
-    .container{
-        margin: 0;
+    .container-fluid{
+        margin: 0.5%;
     }
 }
