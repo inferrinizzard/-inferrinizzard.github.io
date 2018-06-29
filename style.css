@@ -22,6 +22,10 @@
     max-height: 80px;
   }
 
+  .navbar-header{
+    max-width: 200px;
+  }
+
   .navbar-inverse .navbar-nav .active a,.navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
     color: #e6e7e8;
     background-color: #5DC094;
