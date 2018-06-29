@@ -2,12 +2,12 @@
     text-align: right;
 }
 
-.container-fluid{
+.main .container-fluid{
     margin: 0 4%;
 }
 
 @media (max-width: 600px){
-    .container-fluid{
+    .main .container-fluid{
         margin: 0.5%;
     }
 }
