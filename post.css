@@ -1,7 +1,14 @@
 .container{
-    margin: 0 10%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .count{
     text-align: right;
+}
+
+@media (max-width: 600px){
+    .container{
+        margin: 0;
+    }
 }
