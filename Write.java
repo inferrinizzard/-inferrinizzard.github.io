@@ -12,17 +12,19 @@ public class Write{
         int[] indices = findIndices(content);
 
         String title = cutText(content, indices,0);
-        String date = cutText(content, indices,1);
-        String video = cutText(content, indices,2);
+        String video = cutText(content, indices,1);
+        String header = cutText(content, indices,2);
         String body = cutText(content, indices,3);
+        String date = cutText(content, indices,4);
         String count = fresh.get(4);
 
         for(int i=0;i<htmlFile.size();i++){
             String temp = htmlFile.get(i);
             temp =  temp.replace("$title", title);
-            temp =  temp.replace("$date", date);
             temp =  temp.replace("$video", video);
+            temp =  temp.replace("$header", header);
             temp =  temp.replace("$body", body);
+            temp =  temp.replace("$date", date);
             temp =  temp.replace("$count", count);
             htmlFile.set(i,temp);
         }

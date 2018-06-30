@@ -1,9 +1,13 @@
 function saveTextAsFile(){
     var title = document.getElementById("title").value;
-    var date = document.getElementById("date").value;
     var video = document.getElementById("video").value;
+    var header = document.getElementById("header").value;
     var body = document.getElementById("body").value;
-    var text = [title,date,video,body].join(" $ ") + " $ ";
+    
+    var d = new Date();
+    var date = [d.getDate(),d.getMonth()+1,d.getFullYear()].join("/");
+
+    var text = [title,video,header,body,date].join(" $ ") + " $ ";
 
     var textToSaveAsBlob = new Blob([text], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);

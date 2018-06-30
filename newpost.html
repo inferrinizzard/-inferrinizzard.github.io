@@ -17,39 +17,31 @@
 	<div include-html="nav.html"></div>
 
   <div class="main">
-		<br>
-		<table>
-			<tr><td>New Post:</td></tr>
-			<tr>
-				<td>
-					<input type="text" id="title" placeholder="Title"></input>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="text" id="date" placeholder="Date"></input>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3">
-					<input type="text" id="video" placeholder="Video Embed URL"></input>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3">
-					<input type="text" id="body" placeholder="Text Body"></input>
-				</td>
-			</tr>
-				<td>Filename to Save As:</td>
-				<td><input id="inputFileNameToSaveAs" value="post.txt"></input></td>
-				<td><button onclick="saveTextAsFile()">Save Text to File</button></td>
-			</tr>
-			<tr>
-				<td>Select a File to Load:</td>
-				<td><input type="file" id="fileToLoad"></td>
-				<td><button onclick="loadFileAsText()">Load Selected File</button><td>
-			</tr>
-		</table>
+		<div class="container-fluid">
+			<div class="col-xs-12 col-md-8">
+				<br>
+				<h1>New Post:</h1>
+				<hr>
+				<h1><input type="text" id="title" placeholder="Title"></input></h1>
+				<br>
+				<input type="text" id="video" placeholder="Video Embed URL"></input>
+				<br>
+				<h2><strong><input type="text" id="header" placeholder="Header"></input></strong></h2>
+				<br>
+				<h2><input type="text" id="body" placeholder="Text Body"></input></h2>
+			</div>
+
+			<div class="col-md-4">
+				<h1>Filename to Save As:</h1>
+				<input id="inputFileNameToSaveAs" value="post.txt"></input>
+				<button onclick="saveTextAsFile()">Save Text to File</button>
+				<br>
+				<h1>Select a File to Load</h1>
+				<input type="file" id="fileToLoad"></input>
+				<button onclick="loadFileAsText()">Load Selected File</button>
+			</div>
+	
+		</div>
 	
 		<script type="text/javascript" src="writeToFile.js"></script>
   </div>
