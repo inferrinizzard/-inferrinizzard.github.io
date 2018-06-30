@@ -42,10 +42,6 @@ html, div{
 	float: left;
 	min-height: 55px;
 	padding: 0 15px 5px;
-
-	#logo{
-		max-height: 60px;
-	}
 }
 
 .collapse.navbar-collapse{
@@ -54,12 +50,6 @@ html, div{
 }
 
 .navbar-inverse .navbar-nav{
-	active a{
-		&:focus, &:hover{
-			.bg-green1;
-		}
-	}
-
 	li a{
 		color: @off-white;
 		font-size: 18pt;
@@ -68,6 +58,12 @@ html, div{
 			.bg-green2;
 			border-radius: 5px;
 			box-shadow: 2px @green3;
+		}
+	}
+	
+	active a{
+		&:focus, &:hover{
+			.bg-green1;
 		}
 	}
 }
