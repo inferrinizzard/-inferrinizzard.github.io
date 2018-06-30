@@ -10,7 +10,7 @@
 }
 
 html, div{
-    font-family: typoRound;
+	font-family: typoRound;
 }
 
 .bg-green1{
@@ -43,8 +43,8 @@ html, div{
 	min-height: 55px;
 	padding: 0 15px 5px;
 
-	img{
-			max-height: 60px;
+	#logo{
+		max-height: 60px;
 	}
 }
 
@@ -54,15 +54,17 @@ html, div{
 }
 
 .navbar-inverse .navbar-nav{
-	active a, active a:focus, active a:hover{
-		.bg-green1;
+	active a{
+		&:focus, &:hover{
+			.bg-green1;
+		}
 	}
 
 	li a{
 		color: @off-white;
 		font-size: 18pt;
 
-		hover{
+		&:hover{
 			.bg-green2;
 			border-radius: 5px;
 			box-shadow: 2px @green3;
@@ -90,7 +92,7 @@ html, div{
 	padding: 12px 22px;
 	border: 2px solid;
 
-	hover{
+	&:hover{
 		.bg-green2;
 		border: 2px solid;
 	}
@@ -101,7 +103,7 @@ html, div{
 	width: 100%;
 	max-width: 100%;
 
-	hi{
+	h1{
 		text-align: center;
 	}
 }
@@ -111,7 +113,7 @@ html, div{
 	font-size: 42px;
 	color: @off-white;
 
-	hover{
+	&:hover{
 		.bg-green2;
 		border-radius: 5px;
 		box-shadow: 2px @green3;
