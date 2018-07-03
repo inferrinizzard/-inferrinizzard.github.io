@@ -10,4 +10,6 @@ function appendPost(type) {
     link.appendChild(title);
     link.appendChild(line);
     link.appendChild(media);
+    title.innerHTML = test;
+    
 }

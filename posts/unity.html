@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>$title - sk99</title>
+  <title>Unity- sk99</title>
   <link rel="icon" href="/img/sk.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +14,7 @@
   <link rel="stylesheet/less" type="text/css" href="/post.less">
   <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.5.0-beta.2/less.min.js" ></script>
   <script type="text/javascript" src="/include.js"></script>
+  <script type="text/javascript" src="/newArticle.js"></script>
 </head>
 
 <body>
@@ -21,25 +22,17 @@
 
   <div class="main">
     <div class="container-fluid">
-      <div class="col-xs-12 col-md-8">
-        <br>
-        <h1 id="title">$title - $date</h1>
-        <br>
-        <div class="flex-item video-content embed-responsive embed-responsive-16by9">
-          <iframe class ="embed-responsive-item" src="$video" frameborder="0" encrypted-media ="allowfullscreen"></iframe>
+      <div class="row">
+        <div class="col-sm-4" id="content">
+          <h1>Unity</h1>
         </div>
-        <br>
-        <h2><strong>$header</strong></h2>
-        <br>
-        <h2>$body</h2>
-        <br>
-        <p class="count">#$count</p>
+        <div class="col-sm-4">
+          <h1>Processing</h1>
+        </div>
+        <div class="col-sm-4">
+          <h1>Other</h1>
+        </div>
       </div>
-
-      <div class="col-md-4">
-        <h2></h2>
-      </div>
-
     </div>
   </div>
 
@@ -47,5 +40,6 @@
 </body>
 
 <script>includeHTML();</script>
+<script>appendPost("content");</script>
 
 </html>

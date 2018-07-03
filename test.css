@@ -1,0 +1,42 @@
+article{
+	position: relative;
+	vertical-align: bottom;
+}
+
+article section{
+	text-align: center;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	opacity: 0;
+	transition: .25s ease-in;
+}
+
+article section .vignette{
+	background: linear-gradient(rgba(0,0,0,.5),rgba(12,12,12,.5));
+	padding-bottom: 10px;
+}
+
+article section h4{
+	margin-bottom: 0;
+}
+
+article img{
+	width: 100%;
+}
+
+article:hover section{
+	opacity: 1;
+}
+
+article a:hover{
+	text-decoration: none;
+}
+
+article hr{
+	width: 35%;
+	margin: 0 auto;
+}

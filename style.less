@@ -1,8 +1,12 @@
-@green1: #5DC094;
+@green1: #5dc094;
 @green2: #268f65;
 @green3: #00613a;
+@green0: #90f3c4;
 @off-white: #e6e7e8;
-
+@accent: #4946b4;
+@red1: #d32027;
+@red2: #990000;
+@red0: #ff5c50;
 
 @font-face{
 	font-family: typoRound;
@@ -104,9 +108,46 @@ html, div{
 }
 
 article{
-	background-color: @off-white;
-	border-radius: 5%;
-	box-shadow: 2em;
+	position: relative;
+	vertical-align: bottom;
+
+	a:hover{
+		text-decoration: none;
+	}
+
+	article img{
+		width: 100%;
+	}
+
+	&:hover section{
+		opacity: 1;
+	}
+
+	section{
+		text-align: center;
+		color: white;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		opacity: 0;
+		transition: .25s ease-in;
+
+		.vignette{
+			background: linear-gradient(rgba(0,0,0,.5),rgba(12,12,12,.5));
+			padding-bottom: 10px;
+
+			hr{
+				width: 35%;
+				margin: 0 auto;
+			}
+			
+			h4{
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
 .fa{
