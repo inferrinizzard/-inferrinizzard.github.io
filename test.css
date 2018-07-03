@@ -20,6 +20,14 @@ article section .vignette{
 	padding-bottom: 10px;
 }
 
+article section .vignette span{
+	font-size: 24px;
+}
+
+article section .vignette .date{
+	color: #90f3c4;
+}
+
 article section h4{
 	margin-bottom: 0;
 }
