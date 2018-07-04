@@ -48,3 +48,13 @@ article hr{
 	width: 35%;
 	margin: 0 auto;
 }
+
+.col-sm-4{
+	padding: 0;
+}
+
+.navbar-brand{
+	float: left;
+	padding-left: 2px;
+	padding-right: 2px;
+}
