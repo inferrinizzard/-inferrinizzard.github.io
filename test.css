@@ -28,12 +28,17 @@ article section .vignette .date{
 	color: #90f3c4;
 }
 
-article section h4{
-	margin-bottom: 0;
+article section .vignette a h4{
+	margin-bottom: 5px;
+	margin-top: 0;
+	color: white;
 }
+
+article h4:hover{color: #90f3c4;}
 
 article img{
 	width: 100%;
+	display: block;
 }
 
 article:hover section{
@@ -49,30 +54,43 @@ article hr{
 	margin: 0 auto;
 }
 
-.col-12{
-	padding: 0;
+.grid {
+  background: #DDD;
 }
 
-.navbar-brand{
-	float: left;
-	padding-left: 2px;
-	padding-right: 2px;
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
-.flex-container{
-	padding: 0;
-	display: flex;
-	flex-flow: row wrap;
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
 }
 
-.flex-container article{
-	width: 33.3%;
+.grid-item {
+  float: left;
 }
 
-@media(max-width: 992px){
-	.flex-container article{width: 50%;}
+.grid-item img {
+  display: block;
+  max-width: 100%;
 }
 
-@media(max-width: 768px){
-	.flex-container article{width: 100%;}
+@media(max-width: 986px){
+  .grid-sizer,
+  .grid-item {
+    width: 50%;
+  }
+}
+
+@media(max-width: 700px){
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+  }
 }

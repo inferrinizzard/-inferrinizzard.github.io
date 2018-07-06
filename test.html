@@ -9,141 +9,28 @@
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="test.css">
-		<script type="text/javascript" src="article.js"></script>
 		<script type="text/javascript" src="masonry.js"></script>
+		<script type="text/javascript" src="imagesLoaded.js"></script>
+		<script type="text/javascript" src="article.js"></script>
 	</head>
 
 	<body>
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<!--chnage icon later-->
-					</button>
-					<a class="navbar-brand media" href="index.html"></a>
-						<img src="img/skbrand.png" id="logo" style="max-height: 60px;">
-					</a>
-				</div>
-				<div class="collapse.navbar-collapse" id="navbar">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/index.html">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Unity Projects</a></li>
-						<li><a href="#">Processing</a></li>
-						<li><a href="#">Misc</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
 
-		<button onclick="appendPost('misc','red','10/10','lorem ipsum dolor');">Button</button>
+		<button onclick="appendPost('snow','10/10','unity');">Button</button>
 
 		<div class="container-fluid">
-			<div class="flex-container">
-				<article>
-					<a href="posts/test post.html">
-						<img src="img/red.png">
-						<section>
-							<div class="vignette">
-								<span>Title - </span> <span class="date">Date</span>
-								<hr>
-								<h4>caption</h4>
-							</div>
-						</section>
-					</a>
-				</article>
-				<article>
-					<a href="posts/test post.html">
-						<img src="img/snow.png">
-						<section>
-							<div class="vignette">
-								<span>Title - </span> <span class="date">Date</span>
-								<hr>
-								<h4>caption</h4>
-							</div>
-						</section>
-					</a>
-				</article>
-				<article>
-						<a href="posts/test post.html">
-							<img src="img/skbrand.png">
-							<section>
-								<div class="vignette">
-									<span>Title - </span> <span class="date">Date</span>
-									<hr>
-									<h4>caption</h4>
-								</div>
-							</section>
-						</a>
-				</article>
-				<article>
-					<a href="posts/test post.html">
-						<img src="img/snow.png">
-						<section>
-							<div class="vignette">
-								<span>Title - </span> <span class="date">Date</span>
-								<hr>
-								<h4>caption</h4>
-							</div>
-						</section>
-					</a>
-				</article>
-				<article>
-						<a href="posts/test post.html">
-							<img src="img/red.png">
-							<section>
-								<div class="vignette">
-									<span>Title - </span> <span class="date">Date</span>
-									<hr>
-									<h4>caption</h4>
-								</div>
-							</section>
-						</a>
-				</article>
-				<article>
-					<a href="posts/test post.html">
-						<img src="img/mountains.png">
-						<section>
-							<div class="vignette">
-								<span>Title - </span> <span class="date">Date</span>
-								<hr>
-								<h4>caption</h4>
-							</div>
-						</section>
-					</a>
-				</article>
-				<article>
-						<a href="posts/test post.html">
-							<img src="img/red.png">
-							<section>
-								<div class="vignette">
-									<span>Title - </span> <span class="date">Date</span>
-									<hr>
-									<h4>caption</h4>
-								</div>
-							</section>
-						</a>
-				</article>
-				<article>
-					<a href="posts/test post.html">
-						<img src="img/red.png">
-						<section>
-							<div class="vignette">
-								<span>Title - </span> <span class="date">Date</span>
-								<hr>
-								<h4>caption</h4>
-							</div>
-						</section>
-					</a>
-				</article>
+			<div class="grid" id="anchor">
+				<div class="grid-sizer"></div>
+				<article class="grid-item"><a href="posts/unity/snow.html"><img src="img/snow.png"><section><div id="vignette"><span>snow - </span><span class="date">10/10</span><hr><a href="posts/unity.html"><h4>unity</h4></a></div></section></a></article>
+				<article class="grid-item"><a href="posts/unity/snow.html"><img src="img/snow.png"><section><div id="vignette"><span>snow - </span><span class="date">10/10</span><hr><a href="posts/unity.html"><h4>unity</h4></a></div></section></a></article>
+				<article class="grid-item"><a href="posts/unity/snow.html"><img src="img/skbrand.png"><section><div id="vignette"><span>snow - </span><span class="date">10/10</span><hr><a href="posts/unity.html"><h4>unity</h4></a></div></section></a></article>
+				<article class="grid-item"><a href="posts/unity/snow.html"><img src="img/snow.png"><section><div id="vignette"><span>snow - </span><span class="date">10/10</span><hr><a href="posts/unity.html"><h4>unity</h4></a></div></section></a></article>
+				<article class="grid-item"><a href="posts/unity/snow.html"><img src="img/snow.png"><section><div id="vignette"><span>snow - </span><span class="date">10/10</span><hr><a href="posts/unity.html"><h4>unity</h4></a></div></section></a></article>
+				<article class="grid-item"><a href="posts/unity/snow.html"><img src="img/snow.png"><section><div id="vignette"><span>snow - </span><span class="date">10/10</span><hr><a href="posts/unity.html"><h4>unity</h4></a></div></section></a></article>
 			</div>
 		</div>
 	</body>
-
-	<!-- <script>appendPost("misc");</script> -->
 
 </html>
