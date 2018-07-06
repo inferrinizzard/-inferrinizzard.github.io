@@ -1,17 +1,17 @@
-function appendPost(type) {
-    var id = toString(type);
 
-    var parent = document.getElementById(id);
+
+function appendPost(titleText, dateText, type) {
+    var parent = document.getElementById("anchor");
     var article = document.createElement('article');
     parent.appendChild(article);
 
     var link = document.createElement('a');
-    var linkAnchor = "";
+    var linkAnchor = "posts/"+type+"/"+titleText+".html";
     link.setAttribute('href',linkAnchor);
     article.appendChild(link);
 
     var img = document.createElement('img');
-    var imgFile = Image;
+    var imgFile = "img/"+titleText+".png";
     img.setAttribute('src',imgFile);
     link.appendChild(img);
 
@@ -23,25 +23,26 @@ function appendPost(type) {
     section.appendChild(vignette);
 
     var title = document.createElement('span');
-    var titleText = "";
     var titleNode = document.createTextNode(titleText + " - ");
     title.appendChild(titleNode);
     vignette.appendChild(title);
 
     var date = document.createElement('span'); 
     date.setAttribute('class', "date");
-    var dateText = "";
     var dateNode = document.createTextNode(dateText);
     date.appendChild(dateNode);
     vignette.appendChild(date);
 
     var line = document.createElement('hr');
-    vignette.appendChild(hr);
+    vignette.appendChild(line);
 
-    var caption = document.createElement('h4');
-    var captText = "";
-    var captNode = document.createTextNode(captText);
-    caption.appendChild(captText);
-    vignette.appendChild(caption);  
+    var catLink = document.createElement('a');
+    var catLinkA = "posts/"+type+".html"
+    catLink.setAttribute('href', catLinkA);
+    vignette.appendChild(catLink);
 
+    var category = document.createElement('h4');
+    var catNode = document.createTextNode(type);
+    category.appendChild(catNode);
+    catLink.appendChild(category);  
 }

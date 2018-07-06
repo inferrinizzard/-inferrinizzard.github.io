@@ -5,11 +5,13 @@
 		<link rel="icon" href="img/sk.png">
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+		<base href="inferrinizzard.github.io">
+
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="test.css">
-		<script type="text/javascript" src="newArticle.js"></script>
+		<script type="text/javascript" src="article.js"></script>
+		<script type="text/javascript" src="masonry.js"></script>
 	</head>
 
 	<body>
@@ -38,23 +40,59 @@
 			</div>
 		</nav>
 
+		<button onclick="appendPost('misc','red','10/10','lorem ipsum dolor');">Button</button>
+
 		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xs-0 col-sm-4">
-					<h1>Unity</h1>
-				</div>
-				<div class="col-xs-0 col-sm-4">
-					<h1>Processing</h1>
-				</div>
-				<div class="col-xs-0 col-sm-4">
-					<h1>Other</h1>
-				</div>
-				<div class="col-xs-12 col-sm-0">
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-4" id="unity">
-					<article>
+			<div class="flex-container">
+				<article>
+					<a href="posts/test post.html">
+						<img src="img/red.png">
+						<section>
+							<div class="vignette">
+								<span>Title - </span> <span class="date">Date</span>
+								<hr>
+								<h4>caption</h4>
+							</div>
+						</section>
+					</a>
+				</article>
+				<article>
+					<a href="posts/test post.html">
+						<img src="img/snow.png">
+						<section>
+							<div class="vignette">
+								<span>Title - </span> <span class="date">Date</span>
+								<hr>
+								<h4>caption</h4>
+							</div>
+						</section>
+					</a>
+				</article>
+				<article>
+						<a href="posts/test post.html">
+							<img src="img/skbrand.png">
+							<section>
+								<div class="vignette">
+									<span>Title - </span> <span class="date">Date</span>
+									<hr>
+									<h4>caption</h4>
+								</div>
+							</section>
+						</a>
+				</article>
+				<article>
+					<a href="posts/test post.html">
+						<img src="img/snow.png">
+						<section>
+							<div class="vignette">
+								<span>Title - </span> <span class="date">Date</span>
+								<hr>
+								<h4>caption</h4>
+							</div>
+						</section>
+					</a>
+				</article>
+				<article>
 						<a href="posts/test post.html">
 							<img src="img/red.png">
 							<section>
@@ -65,8 +103,20 @@
 								</div>
 							</section>
 						</a>
-					</article>
-					<article>
+				</article>
+				<article>
+					<a href="posts/test post.html">
+						<img src="img/mountains.png">
+						<section>
+							<div class="vignette">
+								<span>Title - </span> <span class="date">Date</span>
+								<hr>
+								<h4>caption</h4>
+							</div>
+						</section>
+					</a>
+				</article>
+				<article>
 						<a href="posts/test post.html">
 							<img src="img/red.png">
 							<section>
@@ -77,40 +127,23 @@
 								</div>
 							</section>
 						</a>
-					</article>
-				</div>
-				<div class="col-sm-4" id="processing">
-					<article>
-						<a href="posts/test post.html">
-							<img src="img/red.png">
-							<section>
-								<div class="vignette">
-									<span>Title - </span> <span class="date">Date</span>
-									<hr>
-									<h4>caption</h4>
-								</div>
-							</section>
-						</a>
-					</article>
-				</div>
-				<div class="col-sm-4" id="misc">
-					<article>
-						<a href="posts/test post.html">
-							<img src="img/red.png">
-							<section>
-								<div class="vignette">
-									<span>Title - </span> <span class="date">Date</span>
-									<hr>
-									<h4>caption</h4>
-								</div>
-							</section>
-						</a>
-					</article>
-				</div>
+				</article>
+				<article>
+					<a href="posts/test post.html">
+						<img src="img/red.png">
+						<section>
+							<div class="vignette">
+								<span>Title - </span> <span class="date">Date</span>
+								<hr>
+								<h4>caption</h4>
+							</div>
+						</section>
+					</a>
+				</article>
 			</div>
 		</div>
 	</body>
 
-	<script>appendPost("misc");</script>
+	<!-- <script>appendPost("misc");</script> -->
 
 </html>
