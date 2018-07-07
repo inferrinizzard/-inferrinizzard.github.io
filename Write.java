@@ -6,35 +6,35 @@ public class Write{
         String content = buffRead("post.txt").get(0);
 
         List<String> htmlFile = buffRead("template.html");
-
+        List<String> index = buffread("test.html");
         List<String> fresh = buffRead("fresh.txt");
 
-        int[] indices = findIndices(content);
+        int[] indices = findIndices(content, '$');
 
-        String title = cutText(content, indices,0);
-        String video = cutText(content, indices,1);
-        String header = cutText(content, indices,2);
-        String body = cutText(content, indices,3);
-        String date = cutText(content, indices,4);
+        String title = cutText(content, indices, 0);
+        String video = cutText(content, indices, 1);
+        String body = cutText(content, indices, 2);
+        String date = cutText(content, indices, 3);
         String count = fresh.get(4);
+
+        int[] artIndices = findIndices(content, '#');
+        String article = content.substring(artIndices[0],artIndices[1]).trim();
 
         for(int i=0;i<htmlFile.size();i++){
             String temp = htmlFile.get(i);
-            temp =  temp.replace("$title", title);
-            temp =  temp.replace("$video", video);
-            temp =  temp.replace("$header", header);
-            temp =  temp.replace("$body", body);
-            temp =  temp.replace("$date", date);
-            temp =  temp.replace("$count", count);
+            temp = temp.replace("$title", title);
+            temp = temp.replace("$video", video);
+            temp = temp.replace("$body", body);
+            temp = temp.replace("$date", date);
+            temp = temp.replace("$count", count);
             htmlFile.set(i,temp);
+            if(temp.contains("grid-sizer"))
+                htmlFile.add(i+1,article);
         }
+        
         buffWrite(htmlFile, "posts/"+title+".html");
 
-        int num = Integer.parseInt(count);
-        fresh.set(4,Integer.toString(num+1));
-        buffWrite(fresh, "fresh.txt");
-        File postFile = new File("post.txt");
-        postFile.delete();
+        clearPost();
     }
 
     static List<String> buffRead(String url){
@@ -73,10 +73,10 @@ public class Write{
         return success;
     }
 
-    static int[] findIndices(String str){
+    static int[] findIndices(String str, Char c){
         List<Integer> list = new ArrayList<Integer>();
         for(int i=0;i<str.length();i++)
-            if(str.charAt(i)=='$')
+            if(str.charAt(i)==c)
                 list.add(i);
         int[] num = new int[list.size()];
         for(int i=0;i<list.size();i++)
@@ -91,5 +91,13 @@ public class Write{
         else
             text = str.substring(index[i-1]+1,index[i]);
         return text.trim();
+    }
+
+    static void clearPost(){
+        int num = Integer.parseInt(count);
+        fresh.set(4,Integer.toString(num+1));
+        buffWrite(fresh, "fresh.txt");
+        File postFile = new File("post.txt");
+        postFile.delete();
     }
 }
