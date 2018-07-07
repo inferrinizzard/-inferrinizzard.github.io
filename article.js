@@ -1,9 +1,9 @@
 var grid = document.querySelector('.grid');
-var msnry;
+var iso;
 
 imagesLoaded( grid, function() {
   // init Isotope after all images have loaded
-  msnry = new Masonry( grid, {
+  iso = new Isotope( grid, {
     itemSelector: '.grid-item',
     columnWidth: 'article',
     percentPosition: true
@@ -13,6 +13,7 @@ imagesLoaded( grid, function() {
 function appendPost(titleText, dateText, type) {
     var parent = document.getElementById("anchor");
     var article = document.createElement('article');
+    article.setAttribute('class', type);
     parent.appendChild(article);
 
     var link = document.createElement('a');
