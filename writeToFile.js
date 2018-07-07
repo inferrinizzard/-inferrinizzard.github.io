@@ -28,7 +28,7 @@ function saveTextAsFile(){
 
 function newArticle(titleText, dateText, type) {
     var article = document.createElement('article');
-    article.setAttribute('class', type);
+    article.classList.add("grid-item", type);
 
     var link = document.createElement('a');
     var linkAnchor = "posts/"+titleText+".html";

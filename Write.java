@@ -6,7 +6,7 @@ public class Write{
         String content = buffRead("post.txt").get(0);
 
         List<String> htmlFile = buffRead("template.html");
-        List<String> index = buffread("test.html");
+        List<String> index = buffRead("test.html");
         List<String> fresh = buffRead("fresh.txt");
 
         int[] indices = findIndices(content, '$');
@@ -17,8 +17,8 @@ public class Write{
         String date = cutText(content, indices, 3);
         String count = fresh.get(4);
 
-        int[] artIndices = findIndices(content, '#');
-        String article = content.substring(artIndices[0],artIndices[1]).trim();
+        int[] artIndices = findIndices(content, '%');
+        String article = content.substring(artIndices[0]+1,artIndices[1]).trim();
 
         for(int i=0;i<htmlFile.size();i++){
             String temp = htmlFile.get(i);
@@ -31,10 +31,19 @@ public class Write{
             if(temp.contains("grid-sizer"))
                 htmlFile.add(i+1,article);
         }
+
+        for(int i=9;i<index.size();i++)
+            if(index.get(i).contains("grid-sizer"))
+                index.add(i+1,article); 
         
         buffWrite(htmlFile, "posts/"+title+".html");
+        buffWrite(index, "test.html");
 
-        clearPost();
+        int num = Integer.parseInt(count);
+        fresh.set(4,Integer.toString(num+1));
+        buffWrite(fresh, "fresh.txt");
+        File postFile = new File("post.txt");
+        postFile.delete();
     }
 
     static List<String> buffRead(String url){
@@ -73,7 +82,7 @@ public class Write{
         return success;
     }
 
-    static int[] findIndices(String str, Char c){
+    static int[] findIndices(String str, char c){
         List<Integer> list = new ArrayList<Integer>();
         for(int i=0;i<str.length();i++)
             if(str.charAt(i)==c)
@@ -93,11 +102,4 @@ public class Write{
         return text.trim();
     }
 
-    static void clearPost(){
-        int num = Integer.parseInt(count);
-        fresh.set(4,Integer.toString(num+1));
-        buffWrite(fresh, "fresh.txt");
-        File postFile = new File("post.txt");
-        postFile.delete();
-    }
 }
