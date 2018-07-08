@@ -33,7 +33,6 @@
 	padding: 1% 0;
 	font-size: 1.2em;
 	border: 0;
-	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 2;
@@ -198,12 +197,18 @@ footer{
 	.grid{article, .grid-sizer{width: 50%;}}
 }
 
-@media (max-width: 820px){
-	.collapse.navbar-collapse{display: none;}
+@media (max-width: 768px){
+	.collapse.navbar-collapse{
+		display: none;
+
+		li{float: right;}
+	}
 	
 	.navbar-toggle{display: inherit;}
 
-	.main .container-fluid{margin: 0.5%;}
+	.main .container-fluid{padding: 0.5%;}
+
+	.grid{article, .grid-sizer{width: 50%;}}
 	
 	.carousel-caption{display: none;}
 
@@ -215,8 +220,4 @@ footer{
 			padding: 10px;
 		}
 	}
-}
-
-@media (max-width: 768px){
-	.grid{article, .grid-sizer{width: 50%;}}
 }
