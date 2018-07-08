@@ -6,7 +6,7 @@ public class Write{
         String content = buffRead("post.txt").get(0);
 
         List<String> htmlFile = buffRead("template.html");
-        List<String> index = buffRead("test.html");
+        List<String> index = buffRead("index.html");
         List<String> fresh = buffRead("fresh.txt");
 
         int[] indices = findIndices(content, '$');
@@ -32,12 +32,12 @@ public class Write{
                 htmlFile.add(i+1,article);
         }
 
-        for(int i=9;i<index.size();i++)
+        for(int i=0;i<index.size();i++)
             if(index.get(i).contains("grid-sizer"))
                 index.add(i+1,article); 
         
         buffWrite(htmlFile, "posts/"+title+".html");
-        buffWrite(index, "test.html");
+        buffWrite(index, "index.html");
 
         int num = Integer.parseInt(count);
         fresh.set(4,Integer.toString(num+1));
