@@ -39,45 +39,54 @@
 	width: 100%;
 	z-index: 2;
 	max-height: 80px;
-
-	.container-fluid{padding-left: 2px;}
 }
 
-.navbar-brand{
+.navbar{
+	.navbar-brand{
 	min-height: 55px;
 	padding: 0 2px 2px 5px;
 	float: left;
-}
-
-.collapse{
-	vertical-align: top;
-	max-height: 80px;
-
-	ul{padding-right: 5px;}
-}
-
-.navbar .navbar-nav{
-	margin-top: 80px;
-
-	li a{
-		color: @off-white;
-		font-size: 18pt;
-		float: right;
-
-		&:hover{
-			.bg-green2;
-			border-radius: 5px;
-			box-shadow: 2px @green3;
-		}
 	}
+
+	.collapse{
+		vertical-align: top;
+		max-height: 80px;
 	
-	active a{
-		&:focus, &:hover{.bg-green1;}
+		.navbar-nav{
+			margin-top: 80px;
+			padding-right: 5px;
+
+			li a{
+				color: @off-white;
+				font-size: 18pt;
+				float: right;
+		
+				&:hover{
+					.bg-green2;
+					border-radius: 5px;
+					box-shadow: 2px @green3;
+				}
+
+				active a{
+					&:focus, &:hover{.bg-green1;}
+				}
+			}
+		}
 	}
 }
 
 .main{
 	margin-top: 80px;
+
+	.carousel{
+		img{width: 100%;}
+ 
+		.carousel-caption{
+		 top: 50%;
+		 transform: translateY(-50%);
+		 text-transform: initial;
+	 }
+ }
 
 	.container-fluid{
 		margin: 0;;
@@ -88,14 +97,6 @@
 
 		.col-sm-4{padding: 0;}
 	}
-}
-
-.carousel img{width: 100%;}
-
-.carousel-caption{
-	top: 50%;
-	transform: translateY(-50%);
-	text-transform: initial;
 }
 
 .btn{
