@@ -27,7 +27,7 @@
 	transition: .3s;
 }
   
-.navbar{
+.navbar, .navbar-dark{
 	.bg-green1;
 	margin-bottom: 0;
 	border-radius: 0;
@@ -56,10 +56,13 @@
 	ul{padding-right: 5px;}
 }
 
-.navbar-inverse .navbar-nav{
+.navbar .navbar-nav{
+	margin-top: 80px;
+
 	li a{
 		color: @off-white;
 		font-size: 18pt;
+		float: right;
 
 		&:hover{
 			.bg-green2;
@@ -202,7 +205,7 @@ footer{
 @media (max-width: 768px){
 	.collapse{display: none;}
 	
-	.navbar-toggle{display: inherit;}
+	.navbar-toggler{display: inherit;}
 
 	.main .container-fluid{padding: 0.5%;}
 
