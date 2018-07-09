@@ -26,9 +26,19 @@
 	color: white;
 	transition: .3s;
 }
+
+.button{
+	.bg-green1;
+		font-size: 24pt;
+		border: 2px solid;
+	
+	&:hover{
+		.bg-green2;
+	}
+}
   
 .navbar{
-	&, .navbar-dark{
+	&, &-dark{
 		.bg-green1;
 		margin-bottom: 0;
 		padding: 0;
@@ -41,22 +51,19 @@
 		max-height: 70px;
 	}
 
-	.navbar-brand{
-	min-height: 55px;
-	padding: 0 2px 2px 5px;
-	float: left;
+	&-brand{
+		min-height: 55px;
+		padding: 0 2px 2px 5px;
+		float: left;
 	}
 
 	.btn{
 		.bg-green1;
 		margin: 6px;
 		padding: 0 5px;
-		border: none;
 
 		&:active, &:focus, &:hover{
-			border: none;
 			.bg-green2;
-			box-shadow: none;
 		}
 
 		&::after{display: none;}
@@ -82,16 +89,16 @@
 		border: 0;
 
 		a{
+			font-size: 24pt;
 			text-align: right;
-			.bg-green1;
+			float: right;
 			border-radius: 5px;
 			box-shadow: 2px @green3;
 			width: min-content;
 			margin: 3px 0;
+			padding: 5px 20px;
 
-			&:hover{
-				.bg-green2;
-			}
+			.button;
 		}
 	}
 }
@@ -100,15 +107,9 @@
 	margin-top: 70px;
 
 	.btn{
-		.bg-green1;
-		font-size: 24px;
 		padding: 12px 22px;
-		border: 2px solid;
-	
-		&:hover{
-			.bg-green2;
-			border: 2px solid;
-		}
+
+		.button;
 	}
 
 	.carousel{
