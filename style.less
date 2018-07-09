@@ -65,6 +65,7 @@
 
 			&:active, &:focus, &:hover{
 				.bg-green2;
+				box-shadow: 2px 2px @green3;
 			}
 
 			&::after{display: none;}
@@ -76,7 +77,6 @@
 				font-size: 42px;
 
 				&:hover{
-					box-shadow: 2px 2px @green3;
 					text-decoration: none;
 				}
 			}
@@ -87,7 +87,6 @@
 			padding: 0;
 			margin: 0;
 			border: 0;
-			transition: .3 ease;
 			width: min-content;
 
 			a{
@@ -97,8 +96,9 @@
 				border-radius: 5px;
 				box-shadow: 2px 2px @green3;
 				width: 152px;
-				margin: 3px 0;
+				margin: 3px 6px 3px 0;
 				padding: 5px 20px;
+				transition: .3 ease;
 
 				.button;
 
