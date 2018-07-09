@@ -161,9 +161,9 @@
 		vertical-align: bottom;
 		float: left;
 
-		&, .grid-sizer{width: 33.333%;}
-
 		a:hover{text-decoration: none;}
+
+		&, &-sizer{width: 33.333%;}
 
 		img{
 			width: 100%;
@@ -184,7 +184,7 @@
 			transition: .25s ease-in;
 
 			.vignette{
-				background: linear-gradient(rgba(0,0,0,.5),rgba(18,18,18,.5));
+				background: linear-gradient(rgba(0,0,0,.35),rgba(36,36,36,.35));
 				padding-bottom: 10px;
 
 				span{font-size: 24px;}
@@ -197,8 +197,8 @@
 				}
 
 				h4{
-					margin-bottom: 5;
-					margin-top: 0;
+					margin: 0 auto;
+					padding-bottom: 5px;
 				}
 			}
 		}
@@ -220,6 +220,7 @@ footer{
 		padding: 6px;
 		font-size: 42pt;
 		color: @off-white;
+		margin: 5px;
 	
 		&:hover{
 			.bg-green2;
@@ -231,7 +232,7 @@ footer{
 }
 
 @media (max-width: 986px){
-	.grid{article, .grid-sizer{width: 50%;}}
+	.grid{article, &-sizer{width: 50%;}}
 }
 
 @media (max-width: 768px){
@@ -241,7 +242,7 @@ footer{
 
 	.main .container-fluid{padding: 0.5%;}
 
-	.grid{article, .grid-sizer{width: 50%;}}
+	.grid{article, &-sizer{width: 50%;}}
 	
 	.carousel-caption{display: none;}
 

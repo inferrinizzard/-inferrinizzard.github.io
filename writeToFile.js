@@ -61,14 +61,10 @@ function newArticle(titleText, dateText, type) {
     var line = document.createElement('hr');
     vignette.appendChild(line);
 
-    var catLink = document.createElement('a');
-    catlink.setAttribute('id',type);
-    vignette.appendChild(catLink);
-
     var category = document.createElement('h4');
     var catNode = document.createTextNode(type);
     category.appendChild(catNode);
-    catLink.appendChild(category); 
+    vignette.appendChild(category); 
 
     return article.outerHTML;
 }

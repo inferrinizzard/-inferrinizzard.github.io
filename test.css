@@ -16,8 +16,7 @@ article section{
 }
 
 article section .vignette{
-	background: linear-gradient(rgba(0,0,0,.5),rgba(12,12,12,.5));
-	padding-bottom: 10px;
+	background: linear-gradient(rgba(0,0,0,.35),rgba(36,36,36,.35));
 }
 
 article section .vignette span{
@@ -28,11 +27,12 @@ article section .vignette .date{
 	color: #90f3c4;
 }
 
-article section .vignette a h4{
-	margin-bottom: 5px;
-	margin-top: 0;
+article section .vignette h4{
+	margin: 0 auto;
+	padding-bottom: 5px;
 	color: white;
 }
+
 
 article h4:hover{color: #90f3c4;}
 
