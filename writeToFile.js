@@ -62,8 +62,7 @@ function newArticle(titleText, dateText, type) {
     vignette.appendChild(line);
 
     var catLink = document.createElement('a');
-    var catLinkA = "posts/"+type+".html"
-    catLink.setAttribute('href', catLinkA);
+    catlink.setAttribute('id',type);
     vignette.appendChild(catLink);
 
     var category = document.createElement('h4');
