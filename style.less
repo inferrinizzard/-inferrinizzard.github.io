@@ -89,6 +89,10 @@
 			border: 0;
 			width: min-content;
 
+			&:active a{
+				animation: drop .3s forwards;
+			}
+
 			a{
 				font-size: 24pt;
 				text-align: right;
@@ -107,6 +111,17 @@
 				&:nth-child(3){transition-delay: .3;}
 				&:nth-child(4){transition-delay: .4;}
 				&:nth-child(5){transition-delay: .5;}
+			}
+
+			@keyframes drop {
+				0%{
+					transform: translateX(-25px);
+				}
+
+				100%{
+					transform: translateX(0px);
+				}
+				
 			}
 		}
 	}
