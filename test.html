@@ -11,6 +11,9 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="test.css">
 
+		<link rel="stylesheet/less" type="text/css" href="style.less">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.5.0-beta.2/less.min.js" ></script>
+
 		<script src="isotope.js" async></script>
 		<script src="imagesLoaded.js" async></script>
 		<script src="article.js" async></script>
@@ -18,13 +21,24 @@
 
 	<body>
 
+	<div class="main">
 		<div class="container-fluid">
 
 			<div class="button-group filters-button-group">
-				<button class="button" data-filter="*">All</button>
-				<button class="button" data-filter=".unity">unity</button>
-				<button class="button" data-filter=".processing">processing</button>
-				<button class="button" data-filter=".misc">misc</button>
+				<button class="button" data-filter="*">
+					<span class="fas fa-home"></span>
+					<span class="fas fa-times"></span>
+				</button>
+				<button class="button" data-filter=".unity">
+					<img src="img/unityblack.png">
+				</button>
+				<button class="button" data-filter=".processing">
+					<img src="img/processingblack.png">
+				</button>
+				<button class="button" data-filter=".misc">
+					<span class="fas fa-ellipsis-v"></span>
+					<span class="fas fa-ellipsis-h"></span>
+				</button>
 			</div>
 			<div class="grid" id="anchor">
 				<div class="grid-sizer"></div>
@@ -34,6 +48,7 @@
 				<article class="grid-item unity"><a href="posts/unity/snow.html"><img src="img/snow.png"><section><div class="vignette"><span>snow - </span><span class="date">10/10</span><hr><h4>unity</h4></div></section></a></article>
 			</div>
 		</div>
+	</div>
 	</body>
 
 	

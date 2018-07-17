@@ -18,7 +18,7 @@ filtersElem.addEventListener( 'click', function( event ) {
   }
   var filterValue = event.target.getAttribute('data-filter');
   // use matching filter function
-  filterValue = filterFns[ filterValue ] || filterValue;
+  // filterValue = filterFns[ filterValue ] || filterValue;
   iso.arrange({ filter: filterValue });
 });
 
