@@ -19,7 +19,7 @@ filtersElem.addEventListener( 'click', function( event ) {
   }
 
   // if(matchesSelector(event.target, 'button')){
-  //   filterValue = event.target.getAttribute('data-filter');
+    filterValue = event.target.getAttribute('data-filter');
   // }
   // else if(matchesSelector(event.currentTarget, 'btn-info')){
   //   filterValue = event.target.p
