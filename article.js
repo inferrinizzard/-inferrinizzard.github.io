@@ -13,7 +13,7 @@ imagesLoaded( grid, function() {
 var filtersElem = document.querySelector('.filters-button-group');
 filtersElem.addEventListener( 'click', function( event ) {
   // only work with buttons
-  if ( !matchesSelector( event.target, 'button' ) ) {
+  if ( !matchesSelector( event.target, 'button' ) || !matchesSelector( event.target, 'btn-icon' )) {
     return;
   }
   var filterValue = event.target.getAttribute('data-filter');

@@ -153,16 +153,15 @@
 			text-align: center;
 
 			.button{
+				height: 50px;
 				padding: 6px;
 				border-radius: .25rem;
 
-				img{
-					max-width: 50px;
-				}
+				&:active, &.is-checked{.bg-green2;}
 
-				.fas{
-					width: 50px;
-				}
+				img{max-width: 50px;}
+
+				.fas{width: 100%;}
 
 				.fa-times, .fa-ellipsis-v{display: none;}
 			}
