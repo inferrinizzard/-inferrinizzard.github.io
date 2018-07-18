@@ -27,23 +27,8 @@ for(var i=0;i<filtersElem.length;i++){
     // use matching filter function
     // filterValue = filterFns[ filterValue ] || filterValue;
     iso.arrange({ filter: filterValue });
+    document.querySelector('.is-checked').classList.remove('is-checked');
+    event.currentTarget.classList.add('is-checked');
+
   }, true);
-}
-
-// change is-checked class on buttons
-var buttonGroups = document.querySelectorAll('.button-group');
-for ( var i=0, len = buttonGroups.length; i < len; i++ ) {
-  var buttonGroup = buttonGroups[i];
-  radioButtonGroup( buttonGroup );
-}
-
-function radioButtonGroup( buttonGroup ) {
-  buttonGroup.addEventListener( 'click', function( event ) {
-    // only work with buttons
-    if ( !matchesSelector( event.target, 'button' ) ) {
-      return;
-    }
-    buttonGroup.querySelector('.is-checked').classList.remove('is-checked');
-    event.target.classList.add('is-checked');
-  });
 }
