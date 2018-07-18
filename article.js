@@ -10,27 +10,25 @@ imagesLoaded( grid, function() {
   });
 });
 
-var filtersElem = document.querySelector('.filters-button-group');
-filtersElem.addEventListener( 'click', function( event ) {
-  // only work with buttons
-  var filterValue;
-  if ( !matchesSelector( event.target, 'button' )) {
-    return;
-  }
+var filtersElem = document.querySelectorAll('.button');
+for(var i=0;i<filtersElem.length;i++){
+  filtersElem[i].addEventListener( 'click', function( event ) {
+    // only work with buttons
+    
+    // if ( !matchesSelector( event.currentarget, 'button' )) {
+    //   return;
+    // }
 
-  // if(matchesSelector(event.target, 'button')){
-    filterValue = event.target.getAttribute('data-filter');
-  // }
-  // else if(matchesSelector(event.currentTarget, 'btn-info')){
-  //   filterValue = event.target.p
-  // }
-  // else{
-  //   return;
-  // }
-  // use matching filter function
-  // filterValue = filterFns[ filterValue ] || filterValue;
-  iso.arrange({ filter: filterValue });
-}, true);
+    if(!(matchesSelector(event.currentTarget, 'button') || matchesSelector(event.Target, 'btn-icon'))){
+      return;
+    }
+    var filterValue = event.currentTarget.getAttribute('data-filter');
+
+    // use matching filter function
+    // filterValue = filterFns[ filterValue ] || filterValue;
+    iso.arrange({ filter: filterValue });
+  }, true);
+}
 
 // change is-checked class on buttons
 var buttonGroups = document.querySelectorAll('.button-group');
