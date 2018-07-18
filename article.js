@@ -30,7 +30,7 @@ filtersElem.addEventListener( 'click', function( event ) {
   // use matching filter function
   // filterValue = filterFns[ filterValue ] || filterValue;
   iso.arrange({ filter: filterValue });
-}, useCapture);
+}, true);
 
 // change is-checked class on buttons
 var buttonGroups = document.querySelectorAll('.button-group');
