@@ -154,14 +154,21 @@
 
 			.button{
 				height: 50px;
-				padding: 6px;
+				width: 50px;
+				padding: 0;
 				border-radius: .25rem;
 
 				&:active, &.is-checked{.bg-green2;}
 
-				img{max-width: 50px;}
+				img{
+					max-width: 50px;
+					padding: 6px;
+				}
 
-				.fas{width: 100%;}
+				.fas{
+					width: 100%;
+					padding: 6px auto;
+				}
 
 				.fa-times, .fa-ellipsis-v{display: none;}
 			}

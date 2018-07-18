@@ -13,14 +13,24 @@ imagesLoaded( grid, function() {
 var filtersElem = document.querySelector('.filters-button-group');
 filtersElem.addEventListener( 'click', function( event ) {
   // only work with buttons
-  if ( !matchesSelector( event.target, 'button' ) || !matchesSelector( event.target, 'btn-icon' )) {
+  var filterValue;
+  if ( !matchesSelector( event.target, 'button' )) {
     return;
   }
-  var filterValue = event.target.getAttribute('data-filter');
+
+  // if(matchesSelector(event.target, 'button')){
+  //   filterValue = event.target.getAttribute('data-filter');
+  // }
+  // else if(matchesSelector(event.currentTarget, 'btn-info')){
+  //   filterValue = event.target.p
+  // }
+  // else{
+  //   return;
+  // }
   // use matching filter function
   // filterValue = filterFns[ filterValue ] || filterValue;
   iso.arrange({ filter: filterValue });
-});
+}, useCapture);
 
 // change is-checked class on buttons
 var buttonGroups = document.querySelectorAll('.button-group');
