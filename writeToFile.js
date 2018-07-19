@@ -31,12 +31,12 @@ function newArticle(titleText, dateText, type) {
     article.classList.add("grid-item", type);
 
     var link = document.createElement('a');
-    var linkAnchor = "posts/"+titleText+".html";
+    var linkAnchor = "/posts/"+titleText+".html";
     link.setAttribute('href',linkAnchor);
     article.appendChild(link);
 
     var img = document.createElement('img');
-    var imgFile = "img/"+titleText+".png";
+    var imgFile = "/img/"+titleText+".png";
     img.setAttribute('src',imgFile);
     link.appendChild(img);
 
