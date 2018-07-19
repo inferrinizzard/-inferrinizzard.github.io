@@ -9,7 +9,7 @@ function saveTextAsFile(){
 
     var article = newArticle(title, date, category);
 
-    var text = [title,video,body,date].join(" $ ") + " $ % " + article + " %";
+    var text = [title,video,body,date,category].join(" $ ") + " $ % " + article + " %";
 
     var textToSaveAsBlob = new Blob([text], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);

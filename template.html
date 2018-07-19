@@ -16,6 +16,7 @@
   <link rel="stylesheet/less" href="/style.less">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.5.0-beta.2/less.min.js" ></script>
   <script src="/include.js"></script>
+  <script src="/sidebar.js"></script>
 </head>
 
 <body>
@@ -33,11 +34,15 @@
       <br>
       <h2>$body</h2>
       <br>
-      <p class="count">#$count</p>
+      <p class="count" id="$type">#$count</p>
     </div>
 
     <div class="col-md-4">
-      <h2></h2>
+      <h2>More like this</h2>
+      <div class="grid" id="anchor">
+        <div class="grid-sizer"></div>
+
+      </div>
     </div>
 
   </div>

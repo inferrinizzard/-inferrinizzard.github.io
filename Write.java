@@ -15,6 +15,7 @@ public class Write{
         String video = cutText(content, indices, 1);
         String body = cutText(content, indices, 2);
         String date = cutText(content, indices, 3);
+        String type = cutText(content, indices, 4);
         String count = fresh.get(4);
 
         int[] artIndices = findIndices(content, '%');
@@ -27,6 +28,7 @@ public class Write{
             temp = temp.replace("$body", body);
             temp = temp.replace("$date", date);
             temp = temp.replace("$count", count);
+            temp = temp.replace("$type", type);
             htmlFile.set(i,temp);
             if(temp.contains("grid-sizer"))
                 htmlFile.add(i+1,article);
