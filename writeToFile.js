@@ -31,7 +31,7 @@ function newArticle(titleText, dateText, type) {
     article.classList.add("grid-item", type);
 
     var link = document.createElement('a');
-    var linkAnchor = "posts/"+titleText+".html";
+    var linkAnchor = "/posts/"+titleText+".html";
     link.setAttribute('href',linkAnchor);
     article.appendChild(link);
 
