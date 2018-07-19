@@ -33,7 +33,13 @@
 		border: 2px solid;
 	
 	&:hover{
-		.bg-green2;
+		.bg-green;
+		box-shadow: 2px 2px @green3;
+	}
+
+	&:active{
+		transform: translateY(4px) translateX(2px);
+		box-shadow: none;
 	}
 }
 
@@ -153,13 +159,14 @@
 			text-align: center;
 			padding-bottom: 4px;
 
-			.button{
+			button{
 				height: 60px;
 				width: 60px;
 				padding: 0;
 				border-radius: 1.25rem;
 				vertical-align: middle;
 				outline: none;
+				.button
 				
 				&.is-checked{
 					& .fa-home{
@@ -173,7 +180,6 @@
 
 				&:active, &.is-checked{
 					.bg-green2;
-					box-shadow: 2px 2px @green3;
 					
 					img{color: white;}
 				}
