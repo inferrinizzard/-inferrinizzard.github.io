@@ -28,6 +28,7 @@
 }
 
 .button{
+	transition: .1s;
 	.bg-green1;
 		font-size: 24pt;
 		border: 2px solid;
@@ -169,13 +170,11 @@
 				.button
 				
 				&.is-checked{
-					& .fa-home{
-						display: initial
-					}
+					& .fa-home{display: initial}
 
-					& .fa-times{
-						display: none;
-					}
+					& .fa-times{display: none;}
+
+					&:hover{box-shadow: none;}
 				}
 
 				&:active, &.is-checked{
@@ -184,9 +183,7 @@
 					img{color: white;}
 				}
 
-				img{
-					max-width: 50px;
-				}
+				img{max-width: 50px;}
 
 				.fas{
 					width: 100%;
@@ -214,7 +211,7 @@
 	}
 }
 
-.grid{
+& > .grid{
 	background: @off-white;
 
 	&:after{
