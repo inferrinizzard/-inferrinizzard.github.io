@@ -3,8 +3,7 @@ $(function(){
     var anchor = $("#anchor");
     var temp = $("<div></div>");
     temp.load("/test.html ." + type + ":eq(0)").html();
-    alert(temp);
-    anchor.append(temp);
+    anchor.append(temp.html());
     // anchor.load("/test.html ." + type + ":eq(1)");
     // anchor.load("/test.html ." + type + ":eq(2)");
 })
