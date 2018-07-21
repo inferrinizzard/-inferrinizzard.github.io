@@ -203,13 +203,20 @@
 
 		h1{text-align: center;}
 
-		.col-sm-4{padding: 0;}
+
+		.side-bar{
+			padding: 0;
+
+			article, .grid-sizer{width: 100%;}
+		}
 
 		.count{
 			text-align: right;
 			color: #e6e7e8;
 		}
 	}
+
+	
 }
 
 .grid{
@@ -221,14 +228,14 @@
 		clear: both;
 	}
 
+	article, &-sizer{width: 33.333%;}
+
 	article{
 		position: relative;
 		vertical-align: bottom;
 		float: left;
 
 		a:hover{text-decoration: none;}
-
-		&, &-sizer{width: 33.333%;}
 
 		img{
 			width: 100%;
@@ -305,7 +312,7 @@ footer{
 
 	.main .container-fluid{padding: 0.5%;}
 
-	.grid{article, &-sizer{width: 50%;}}
+	.grid{article, &-sizer{width: 100%;}}
 	
 	.carousel-caption{display: none;}
 
