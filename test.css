@@ -1,93 +1,34 @@
-article{
-	position: relative;
-	vertical-align: bottom;
-}
-
-article section{
-	text-align: center;
-	color: white;
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: 0 auto;
-	opacity: 0;
-	transition: .25s ease-in;
-}
-
-article section .vignette{
-	background: linear-gradient(rgba(0,0,0,.35),rgba(36,36,36,.35));
-}
-
-article section .vignette span{
-	font-size: 24px;
-}
-
-article section .vignette .date{
-	color: #90f3c4;
-}
-
-article section .vignette h4{
-	margin: 0 auto;
-	padding-bottom: 5px;
-	color: white;
-}
-
-
-article h4:hover{color: #90f3c4;}
-
-article img{
+#carousel-custom {
+	margin-top:  10px;
 	width: 100%;
-	display: block;
 }
-
-article:hover section{
+#carousel-custom .carousel-indicators {
+	margin: 10px 0 0;
+	overflow: auto;
+	position: static;
+	text-align: left;
+	white-space: nowrap;
+	width: 100%;
+}
+#carousel-custom .carousel-indicators li {
+	background-color: transparent;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	display: inline-block;
+	height: auto;
+	margin: 0 !important;
+	width: auto;
+}
+#carousel-custom .carousel-indicators li img {
+	display: block;
+	opacity: 0.5;
+}
+#carousel-custom .carousel-indicators li.active img {
 	opacity: 1;
 }
-
-article a:hover{
-	text-decoration: none;
+#carousel-custom .carousel-indicators li:hover img {
+	opacity: 0.75;
 }
-
-article hr{
-	width: 35%;
-	margin: 0 auto;
-}
-
-.grid {
-  background: #DDD;
-}
-
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-.grid-sizer,
-.grid-item {
-  width: 33.333%;
-}
-
-.grid-item {
-  float: left;
-}
-
-.grid-item img {
-  display: block;
-  max-width: 100%;
-}
-
-@media(max-width: 986px){
-  .grid-sizer,
-  .grid-item {
-    width: 50%;
-  }
-}
-
-@media(max-width: 700px){
-  .grid-sizer,
-  .grid-item {
-    width: 100%;
-  }
+#carousel-custom .carousel-outer {
+	position: relative;
 }
