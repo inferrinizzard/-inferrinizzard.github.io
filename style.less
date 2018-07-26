@@ -144,8 +144,6 @@
 	}
 
 	.carousel{
-		img{width: 100%;}
- 
 		.carousel-caption{
 		 top: 50%;
 		 transform: translateY(-50%);
@@ -161,17 +159,18 @@
 		li {
 			background-color: transparent;
 			height: auto;
-			margin: 0 !important;
+			margin: 0;
 			width: auto;
 
 			img {
 				display: block;
 				opacity: 0.5;
-
-				&:active{opacity: 1;}
-
-				&:hover{opacity: .75;}
+				max-height: 100px;
 			}
+
+			&.active img{opacity: 1;}
+
+			&:hover img{opacity: .75;}
 		}
 	 }
  }
