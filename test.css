@@ -1,16 +1,11 @@
 #highlights .carousel-indicators {
-	margin: 10px 0 0;
-	overflow: auto;
+	margin: 0;
 	position: static;
 	text-align: left;
-	white-space: nowrap;
 	width: 100%;
 }
 #highlights .carousel-indicators li {
 	background-color: transparent;
-	-webkit-border-radius: 0;
-	border-radius: 0;
-	display: inline-block;
 	height: auto;
 	margin: 0 !important;
 	width: auto;
@@ -19,12 +14,9 @@
 	display: block;
 	opacity: 0.5;
 }
-#highlights .carousel-indicators li.active img {
+#highlights .carousel-indicators li:active img {
 	opacity: 1;
 }
 #highlights .carousel-indicators li:hover img {
 	opacity: 0.75;
-}
-#highlights .carousel-outer {
-	position: relative;
 }
