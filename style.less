@@ -65,71 +65,69 @@
 		float: left;
 	}
 
-	.dropdown{
-		.btn{
-			.button;
-			margin: 6px;
-			padding: 0 5px;
-			border: none !important;
+	&-toggler{
+		.button;
+		margin: 6px;
+		padding: 0 5px;
+		border: none !important;
 
-			&:active, &:focus, &:hover{
-				.bg-green2;
-				box-shadow: 2px 2px @green3;
-			}
-
-			&::after{display: none;}
-
-			span{
-				text-decoration: none;
-				padding: 8px 5px;
-				color: @off-white;
-				font-size: 42px;
-
-				&:hover{
-					text-decoration: none;
-				}
-			}
+		&:active, &:focus, &:hover{
+			.bg-green2;
+			box-shadow: 2px 2px @green3;
 		}
 
-		&-menu{
-			background-color: rgba(256, 256, 256, 0);
-			padding: 0;
-			margin: 0;
-			border: 0;
-			width: min-content;
-			transition: all .3s ease;
-			-webkit-transition: all .3s ease;
+		&::after{display: none;}
 
-			a{
-				font-size: 24pt;
-				text-align: right;
-				float: right;
-				border-radius: 5px;
-				box-shadow: 2px 2px @green3;
-				width: 152px;
-				margin: 3px 6px 3px 0;
-				padding: 5px 20px;
-				transition: .3s ease;
+		span{
+			text-decoration: none;
+			padding: 8px 5px;
+			color: @off-white;
+			font-size: 42px;
 
-				.button;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
 
-				&:nth-child(1){transition-delay: .1s;}
-				&:nth-child(2){transition-delay: .2s;}
-				&:nth-child(3){transition-delay: .3s;}
-				&:nth-child(4){transition-delay: .4s;}
-				&:nth-child(5){transition-delay: .5s;}
+	&-nav{
+		background-color: rgba(256, 256, 256, 0);
+		padding: 0;
+		margin: 0;
+		border: 0;
+		width: min-content;
+		transition: all .3s ease;
+		-webkit-transition: all .3s ease;
+
+		li{
+			font-size: 24pt;
+			text-align: right;
+			float: right;
+			border-radius: 5px;
+			box-shadow: 2px 2px @green3;
+			width: 152px;
+			margin: 3px 6px 3px 0;
+			padding: 5px 20px;
+			transition: .3s ease;
+
+			.button;
+
+			&:nth-child(1){transition-delay: .1s;}
+			&:nth-child(2){transition-delay: .2s;}
+			&:nth-child(3){transition-delay: .3s;}
+			&:nth-child(4){transition-delay: .4s;}
+			&:nth-child(5){transition-delay: .5s;}
+		}
+
+		@keyframes drop {
+			0%{
+				transform: translateX(-25px);
 			}
 
-			@keyframes drop {
-				0%{
-					transform: translateX(-25px);
-				}
-
-				100%{
-					transform: translateX(0px);
-				}
-				
+			100%{
+				transform: translateX(0px);
 			}
+			
 		}
 	}
 }
