@@ -69,15 +69,13 @@
 		.button;
 		margin: 6px;
 		padding: 0 5px;
-		border: none !important;
-		outline: none;
+		border: none;
+		outline: none !important;
 
 		&:active, &:focus, &:hover{
 			.bg-green2;
 			box-shadow: 2px 2px @green3;
 		}
-
-		&::after{display: none;}
 
 		span{
 			text-decoration: none;
@@ -87,55 +85,55 @@
 
 			&:hover{
 				text-decoration: none;
+				color: white;
 			}
 		}
 	}
 
-	.show &-nav{
-		background-color: rgba(256, 256, 256, 0);
-		padding: 0;
-		margin: 0;
-		border: 0;
-		width: min-content;
-		transition: all .3s ease;
-		-webkit-transition: all .3s ease;
+	&-nav{
 
 		li{
-			font-size: 24pt;
-			text-align: right;
-			float: right;
-			border-radius: 5px;
-			box-shadow: 2px 2px @green3;
-			width: 152px;
-			margin: 3px 6px 3px 0;
-			padding: 5px 20px;
-			transition: .3s ease;
-
-			.button;
-
-			// &:nth-child(1){transition-delay: .1s;}
-			// &:nth-child(2){transition-delay: .2s;}
-			// &:nth-child(3){transition-delay: .3s;}
-			// &:nth-child(4){transition-delay: .4s;}
-			// &:nth-child(5){transition-delay: .5s;}
 
 			a{
-				padding: 0;
-				.bg-green1;
+				padding: 0 .6rem;
+				color: @off-white;
 
-				&:hover{.bg-green2;}
+				&:hover{color: white;}
 			}
 		}
+		.show &, .collapsing &{
+			background-color: rgba(256, 256, 256, 0);
+			padding: 0;
+			margin: 0;
+			border: 0;
+			width: min-content;
+			transition: all .3s ease;
+			-webkit-transition: all .3s ease;
 
-		@keyframes drop {
-			0%{
-				transform: translateX(-25px);
-			}
+			li{
+				font-size: 24pt;
+				text-align: right;
+				float: right;
+				border-radius: 5px;
+				box-shadow: 2px 2px @green3;
+				width: 152px;
+				margin: 3px 6px 3px 0;
+				padding: 5px 20px;
+				transition: .3s ease;
 
-			100%{
-				transform: translateX(0px);
+				.button;
+
+				// &:nth-child(1){transition-delay: .1s;}
+				// &:nth-child(2){transition-delay: .2s;}
+				// &:nth-child(3){transition-delay: .3s;}
+				// &:nth-child(4){transition-delay: .4s;}
+				// &:nth-child(5){transition-delay: .5s;}
+
+				a{
+					padding: 0;
+				}
+
 			}
-			
 		}
 	}
 }
