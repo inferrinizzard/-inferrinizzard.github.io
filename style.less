@@ -70,6 +70,7 @@
 		margin: 6px;
 		padding: 0 5px;
 		border: none !important;
+		outline: none;
 
 		&:active, &:focus, &:hover{
 			.bg-green2;
@@ -90,7 +91,7 @@
 		}
 	}
 
-	&-nav{
+	.show &-nav{
 		background-color: rgba(256, 256, 256, 0);
 		padding: 0;
 		margin: 0;
@@ -117,6 +118,13 @@
 			// &:nth-child(3){transition-delay: .3s;}
 			// &:nth-child(4){transition-delay: .4s;}
 			// &:nth-child(5){transition-delay: .5s;}
+
+			a{
+				padding: 0;
+				.bg-green1;
+
+				&:hover{.bg-green2;}
+			}
 		}
 
 		@keyframes drop {
