@@ -8,24 +8,24 @@ ul#menu{
 	background:#333;
 	color:#eee;
 	box-shadow:0 -1px rgba(0,0,0,.5) inset;
-  }
+}
   
-  ul#menu > li{
+ul#menu > li{
 	float:left;
 	list-style-type:none;
 	position:relative;
-  }
+}
   
-  label{
+label{
 	position:relative;
 	display:block;
 	padding:0 18px 0 12px;
 	line-height:3em;
 	transition:background 0.3s;
 	cursor:pointer;
-  }
+}
   
-  label:after{
+label:after{
 	content:"";
 	position:absolute;
 	display:block;
@@ -38,25 +38,25 @@ ul#menu{
 	border-left:4px solid transparent;
 	border-right:4px solid transparent;
 	transition:border-bottom .1s, border-top .1s .1s;
-	}
+}
   
-  label:hover,
-  input:checked ~ label{background:rgba(0,0,0,.3);}
+label:hover,
+input:checked ~ label{background:rgba(0,0,0,.3);}
   
-  input:checked ~ label:after{
+input:checked ~ label:after{
 	border-top:0 solid rgba(255,255,255,.5);
 	border-bottom:4px solid rgba(255,255,255,.5);
 	transition:border-top .1s, border-bottom .1s .1s;
-  }
+}
   
   /*hide the inputs*/
-  input{display:none}
+input{display:none}
   
   /*show the second levele menu of the selected voice*/
-  input:checked ~ ul.submenu{
+input:checked ~ ul.submenu{
 	max-height:300px;
 	transition:max-height 0.5s ease-in;
-  }
+}
   
   /*style for the second level menu*/
   ul.submenu{
@@ -69,9 +69,9 @@ ul#menu{
 	transition:max-height 0.5s ease-out;
 	position:absolute;
 	min-width:100%;
-  }
+}
   
-  ul.submenu li a{
+ul.submenu li a{
 	display:block;
 	padding:12px;
 	color:#ddd;
@@ -79,8 +79,8 @@ ul#menu{
 	box-shadow:0 -1px rgba(0,0,0,.5) inset;
 	transition:background .3s;
 	white-space:nowrap;
-  }
-  
-  ul.submenu li a:hover{
+}
+
+ul.submenu li a:hover{
 	background:rgba(0,0,0,.3);
-  }
+}
