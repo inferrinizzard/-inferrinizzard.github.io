@@ -68,13 +68,13 @@
 	&-toggler{
 		span{transition: .1s ease;}
 
-		&[aria-expanded="true"]{
+		&:not(.collapsed){
 			.fa-bars{display: none;}
 
 			.fa-times{display: block;}
 		}
 
-		&[aria-expanded="false"]{
+		&.collapsed{
 			.fa-bars{display: block;}
 
 			.fa-times{display: none;}
@@ -127,7 +127,7 @@
 
 		.collapsing &, .collapse &{
 			li{
-				&:nth-child(2){transition-delay: .75s;}
+				&:nth-child(2){transition-delay: .075s;}
 				&:nth-child(3){transition-delay: .15s;}
 				&:nth-child(4){transition-delay: .225s;}
 				&:nth-child(5){transition-delay: .3s;}
