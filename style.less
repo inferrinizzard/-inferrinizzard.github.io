@@ -93,15 +93,15 @@
 		}
 
 		&[aria-expanded="true"]{
-			&.fa-bars{display: none;}
+			.fa-bars{display: none;}
 
-			&.fa-times{display: initial;}
+			.fa-times{display: initial;}
 		}
 
 		&[aria-expanded="false"]{
-			&.fa-bars{display: initial;}
+			.fa-bars{display: initial;}
 
-			&.fa-times{display: none;}
+			.fa-times{display: none;}
 		}
 	}
 
@@ -126,11 +126,10 @@
 
 		.collapsing &, .collapse &{
 			li{
-				&:nth-child(1){transition-delay: .1s;}
-				&:nth-child(2){transition-delay: .2s;}
-				&:nth-child(3){transition-delay: .3s;}
-				&:nth-child(4){transition-delay: .4s;}
-				&:nth-child(5){transition-delay: .5s;}
+				&:nth-child(1){transition-delay: .75s;}
+				&:nth-child(2){transition-delay: .15s;}
+				&:nth-child(3){transition-delay: .225s;}
+				&:nth-child(4){transition-delay: .3s;}
 			}
 		}
 
