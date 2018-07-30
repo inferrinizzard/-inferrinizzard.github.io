@@ -66,33 +66,47 @@
 	}
 
 	&-toggler{
-		.button;
-		margin: 6px;
-		padding: 0 5px;
-		border: none;
-		outline: none !important;
+		span{transition: .1 ease;}
 
-		&:active, &:focus, &:hover{
-			.bg-green2;
-			box-shadow: 2px 2px @green3;
-		}
+		&:not(.collapsed){
+			.button;
+			margin: 6px;
+			padding: 0 5px;
+			border: none;
+			outline: none !important;
 
-		span{
-			text-decoration: none;
-			padding: 8px 5px;
-			color: @off-white;
-			font-size: 42px;
-
-			&:hover{
-				text-decoration: none;
-				color: white;
+			&:active, &:focus, &:hover{
+				.bg-green2;
+				box-shadow: 2px 2px @green3;
 			}
+
+			.fas{
+				text-decoration: none;
+				padding: 8px 5px;
+				color: @off-white;
+				font-size: 42px;
+
+				&.fa-bars{display: initial}
+
+				&.fa-times{display: none;}
+
+				&:hover{
+					text-decoration: none;
+					color: white;
+				}
+			}
+		}
+		&.collapsed{
+			&.fa-bars{display: none;}
+
+			&.fa-times{display: initial;}
 		}
 	}
 
+	&-collapse{transition: none;}
+
 	&-nav{
 		li{
-			transform: translateX(100%);
 			a{
 				padding: 0 .6rem;
 				color: @off-white;
@@ -104,7 +118,7 @@
 
 		.collapsing &{
 			li{
-				transform: translateX(-100%);
+				transform: translateX(100%);
 
 				&:nth-child(1){transition-delay: .1s;}
 				&:nth-child(2){transition-delay: .2s;}
