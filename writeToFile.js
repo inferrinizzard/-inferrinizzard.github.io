@@ -69,6 +69,10 @@ function newArticle(titleText, dateText, type) {
     return article.outerHTML;
 }
 
+function carousel(){
+    
+}
+
 function destroyClickedElement(event){
     document.body.removeChild(event.target);
 }
