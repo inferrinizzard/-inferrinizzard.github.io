@@ -9,7 +9,7 @@ function saveTextAsFile(){
 
     var article = newArticle(title, date, category);
 
-    var text = [title,video,body,date,category].join(" $ ") + " $ % " + article + " %";
+    var text = [title,media,body,date,category].join(" $ ") + " $ % " + article + " %";
 
     var textToSaveAsBlob = new Blob([text], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
@@ -70,7 +70,7 @@ function newArticle(titleText, dateText, type) {
 }
 
 function carousel(){
-    
+
 }
 
 function destroyClickedElement(event){
