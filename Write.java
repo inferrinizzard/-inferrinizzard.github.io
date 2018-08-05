@@ -8,23 +8,31 @@ public class Write{
         List<String> htmlFile = buffRead("template.html");
         List<String> index = buffRead("index.html");
         List<String> fresh = buffRead("fresh.txt");
+        List<String> carTemplate = buffRead("carousel.html");
 
         int[] indices = findIndices(content, '$');
 
         String title = cutText(content, indices, 0);
-        String video = cutText(content, indices, 1);
-        String body = cutText(content, indices, 2);
-        String date = cutText(content, indices, 3);
-        String type = cutText(content, indices, 4);
+        String body = cutText(content, indices, 1);
+        String date = cutText(content, indices, 2);
+        String type = cutText(content, indices, 3);
         String count = fresh.get(4);
 
         int[] artIndices = findIndices(content, '%');
-        String article = content.substring(artIndices[0]+1,artIndices[1]).trim();
+        String article = content.substring(artIndices[0]+1, artIndices[1]).trim();
+
+        int[] carIndices = findIndices(content, '@');
+        String carousel = content.substring(carIndices[0]+1, carIndices[1]).trim();
+        String thumbnails = content.substring(carIndices[1]+1, carIndices[2]).trim();
+        String media = carTemplate.get(0) + carousel;
+        for(int i=17;i<25;i++)
+            media+=carTemplate.get(i);
+        media+=thumbnails + carTemplate.get(carTemplate.size()) + "<br>";
 
         for(int i=0;i<htmlFile.size();i++){
             String temp = htmlFile.get(i);
             temp = temp.replace("$title", title);
-            temp = temp.replace("$video", video);
+            temp = temp.replace("$media", media);
             temp = temp.replace("$body", body);
             temp = temp.replace("$date", date);
             temp = temp.replace("$count", count);

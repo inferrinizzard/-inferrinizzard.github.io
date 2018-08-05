@@ -1,6 +1,7 @@
 function saveTextAsFile(){
     var title = document.getElementById("title").value;
-    var video = document.getElementById("video").value;
+    var video = document.getElementById("video").checked;
+    var image = parseInt(document.getElementById("image").value);
     var body = document.getElementById("body").value;
     var category =  document.getElementById("category").value;
     
@@ -9,7 +10,9 @@ function saveTextAsFile(){
 
     var article = newArticle(title, date, category);
 
-    var text = [title,media,body,date,category].join(" $ ") + " $ % " + article + " %";
+    var media = carousel(title, video, image);
+
+    var text = [title,body,date,category].join(" $ ") + " $ % " + article + " % @ " + media + " @ ";
 
     var textToSaveAsBlob = new Blob([text], {type:"text/plain"});
     var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
@@ -28,23 +31,23 @@ function saveTextAsFile(){
 
 function newArticle(titleText, dateText, type) {
     var article = document.createElement('article');
-    article.classList.add("grid-item", type);
+    article.className = "grid-item" + type;
 
     var link = document.createElement('a');
     var linkAnchor = "/posts/"+titleText+".html";
-    link.setAttribute('href',linkAnchor);
+    link.href = linkAnchor;
     article.appendChild(link);
 
     var img = document.createElement('img');
     var imgFile = "/img/"+titleText+".png";
-    img.setAttribute('src',imgFile);
+    img.src = imgFile;
     link.appendChild(img);
 
     var section = document.createElement('section');
     link.appendChild(section);
 
     var vignette = document.createElement('div');
-    vignette.setAttribute('id',"vignette");
+    vignette.id = "vignette";
     section.appendChild(vignette);
 
     var title = document.createElement('span');
@@ -53,7 +56,7 @@ function newArticle(titleText, dateText, type) {
     vignette.appendChild(title);
 
     var date = document.createElement('span'); 
-    date.setAttribute('class', "date");
+    date.className = "date";
     var dateNode = document.createTextNode(dateText);
     date.appendChild(dateNode);
     vignette.appendChild(date);
@@ -69,8 +72,67 @@ function newArticle(titleText, dateText, type) {
     return article.outerHTML;
 }
 
-function carousel(){
+function carousel(title, video, image){
+    var temp = document.createElement('div');
+    temp.className = "caousel-inner";
+    var thumb = document.createElement('ol');
+    thumb.className = "carousel-indicators";
+    if(video){
+        var videoCItem = document.createElement('div');
+        videoCItem.className = "carousel-item active";
+        var videoWrap = document.createElement('div');
+        videoWrap.className = "flex-item video-content embed-responsive embed-responsive-16by9";
+        videoCItem.appendChild(videoWrap);
+        var videoElem = document.createElement('video');
+        videoElem.src = "/img/" + title + ".mp4"
+        videoWrap.appendChild(videoElem);
+        temp.appendChild(videoCItem);
 
+        var vThumbli = document.createElement("li");
+        vThumbli.setAttribute('data-target', '#imgCarousel');
+        vThumbli.setAttribute('data-slide-to', '0');
+        vThumbli.className = "active";
+        var vThumbimg = document.createElement('img');
+        vThumbimg.src = "/img/" + title + ".png";
+        vThumbimg.className = "img-responsive";
+        vThumbli.appendChild(vThumbimg);
+        thumb.appendChild(vThumbli);
+    }
+
+    for(var i=1; i<=image; i++){
+        var imgCItem = document.createElement('div');
+        imgCItem.className = "carousel-item";
+        var imgElem = document.createElement('img');
+        imgElem.className = "d-block w-100";
+
+        var iThumbli = document.createElement('li');
+        vThumbli.setAttribute('data-target', '#imgCarousel');
+        var iThumbimg = document.createElement('img');
+        vThumbimg.className = "img-responsive";
+
+        if(i==1&&!video){
+            imgCItem.classList.add("active");
+            imgElem.src = "/img/" + title + ".png";
+
+            iThumbli.setAttribute('data-slide-to', '0');
+            iThumbli.className = "active";
+            iThumbimg.src = "/img/" + title + ".png";
+        }
+        if(i!=1){
+            imgElem.src = "/img/" + title + " (" + i + ").png";
+            iThumbli.setAttribute('data-slide-to', i-1);
+            iThumbimg.src = "/img/" + title + " (" + i + ").png";
+        }
+
+        iThumbli.appendChild(iThumbimg);
+        thumb.appendChild(iThumbli);
+
+        imgCItem.appendChild(imgElem);
+        temp.appendChild(imgCItem);
+    }
+
+    var out = [temp.outerHTML(), thumb.outerHTML()];
+    return out.join(" @ ");
 }
 
 function destroyClickedElement(event){
