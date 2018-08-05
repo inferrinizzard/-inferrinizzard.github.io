@@ -31,7 +31,7 @@ function saveTextAsFile(){
 
 function newArticle(titleText, dateText, type) {
     var article = document.createElement('article');
-    article.className = "grid-item" + type;
+    article.className = "grid-item " + type;
 
     var link = document.createElement('a');
     var linkAnchor = "/posts/"+titleText+".html";
@@ -74,7 +74,7 @@ function newArticle(titleText, dateText, type) {
 
 function carousel(title, video, image){
     var temp = document.createElement('div');
-    temp.className = "caousel-inner";
+    temp.className = "carousel-inner";
     var thumb = document.createElement('ol');
     thumb.className = "carousel-indicators";
     if(video){
@@ -131,8 +131,7 @@ function carousel(title, video, image){
         temp.appendChild(imgCItem);
     }
 
-    var out = [temp.outerHTML(), thumb.outerHTML()];
-    return out.join(" @ ");
+    return temp.outerHTML + " @ " + thumb.outerHTML;
 }
 
 function destroyClickedElement(event){

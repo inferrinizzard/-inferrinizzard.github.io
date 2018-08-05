@@ -24,10 +24,10 @@ public class Write{
         int[] carIndices = findIndices(content, '@');
         String carousel = content.substring(carIndices[0]+1, carIndices[1]).trim();
         String thumbnails = content.substring(carIndices[1]+1, carIndices[2]).trim();
-        String media = carTemplate.get(0) + carousel;
+        String media = carTemplate.get(0).trim() + carousel;
         for(int i=17;i<25;i++)
-            media+=carTemplate.get(i);
-        media+=thumbnails + carTemplate.get(carTemplate.size()) + "<br>";
+            media+=carTemplate.get(i).trim();
+        media+=thumbnails + carTemplate.get(carTemplate.size()-1).trim() + "<br>";
 
         for(int i=0;i<htmlFile.size();i++){
             String temp = htmlFile.get(i);
@@ -38,8 +38,6 @@ public class Write{
             temp = temp.replace("$count", count);
             temp = temp.replace("$type", type);
             htmlFile.set(i,temp);
-            if(temp.contains("grid-sizer"))
-                htmlFile.add(i+1,article);
         }
 
         for(int i=0;i<index.size();i++)
