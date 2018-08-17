@@ -73,7 +73,7 @@ function newArticle(titleText, dateText, type) {
     return article.outerHTML;
 }
 
-function carousel(title, video, image){
+function carousel(imgTit, video, image){
     var temp = document.createElement('div');
     temp.className = "carousel-inner";
     var thumb = document.createElement('ol');
@@ -85,7 +85,7 @@ function carousel(title, video, image){
         videoWrap.className = "flex-item video-content embed-responsive embed-responsive-16by9";
         videoCItem.appendChild(videoWrap);
         var videoElem = document.createElement('video');
-        videoElem.src = "/img/" + title + ".mp4"
+        videoElem.src = "/img/" + imgTit + ".mp4"
         videoWrap.appendChild(videoElem);
         temp.appendChild(videoCItem);
 
@@ -94,7 +94,7 @@ function carousel(title, video, image){
         vThumbli.setAttribute('data-slide-to', '0');
         vThumbli.className = "active";
         var vThumbimg = document.createElement('img');
-        vThumbimg.src = "/img/" + title + ".png";
+        vThumbimg.src = "/img/" + imgTit + ".png";
         vThumbimg.className = "img-responsive";
         vThumbli.appendChild(vThumbimg);
         thumb.appendChild(vThumbli);
@@ -113,16 +113,16 @@ function carousel(title, video, image){
 
         if(i==1&&!video){
             imgCItem.classList.add("active");
-            imgElem.src = "/img/" + title + ".png";
+            imgElem.src = "/img/" + imgTit + ".png";
 
             iThumbli.setAttribute('data-slide-to', '0');
             iThumbli.className = "active";
-            iThumbimg.src = "/img/" + title + ".png";
+            iThumbimg.src = "/img/" + imgTit + ".png";
         }
         if(i!=1){
-            imgElem.src = "/img/" + title + " (" + i + ").png";
+            imgElem.src = "/img/" + imgTit + " (" + i + ").png";
             iThumbli.setAttribute('data-slide-to', i-1);
-            iThumbimg.src = "/img/" + title + " (" + i + ").png";
+            iThumbimg.src = "/img/" + imgTit + " (" + i + ").png";
         }
 
         iThumbli.appendChild(iThumbimg);
