@@ -9,7 +9,7 @@ function saveTextAsFile(){
     var d = new Date();
     var date = [d.getDate(),d.getMonth()+1,d.getFullYear()].join("/");
 
-    var article = newArticle(title, date, category);
+    var article = newArticle(title, date, category, imgTit);
 
     var media = carousel(imgTit, video, image);
 
@@ -30,7 +30,7 @@ function saveTextAsFile(){
     downloadLink.click();
 }
 
-function newArticle(titleText, dateText, type) {
+function newArticle(titleText, dateText, type, imgtit) {
     var article = document.createElement('article');
     article.className = "grid-item " + type;
 
@@ -100,7 +100,7 @@ function carousel(imgTit, video, image){
         thumb.appendChild(vThumbli);
     }
 
-    for(var i=1; i<=image; i++){
+    for(var i=0; i<=image; i++){
         var imgCItem = document.createElement('div');
         imgCItem.className = "carousel-item";
         var imgElem = document.createElement('img');
@@ -111,15 +111,15 @@ function carousel(imgTit, video, image){
         var iThumbimg = document.createElement('img');
         vThumbimg.className = "img-responsive";
 
-        if(i==1&&!video){
+        if(i==0&&!video){
             imgCItem.classList.add("active");
             imgElem.src = "/img/" + imgTit + ".png";
 
-            iThumbli.setAttribute('data-slide-to', '0');
+            iThumbli.setAttribute('data-slide-to', i);
             iThumbli.className = "active";
             iThumbimg.src = "/img/" + imgTit + ".png";
         }
-        if(i!=1){
+        if(i!=0){
             imgElem.src = "/img/" + imgTit + " (" + i + ").png";
             iThumbli.setAttribute('data-slide-to', i-1);
             iThumbimg.src = "/img/" + imgTit + " (" + i + ").png";
