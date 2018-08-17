@@ -30,7 +30,7 @@ function saveTextAsFile(){
     downloadLink.click();
 }
 
-function newArticle(titleText, dateText, type, imgtit) {
+function newArticle(titleText, dateText, type, imgTit) {
     var article = document.createElement('article');
     article.className = "grid-item " + type;
 
