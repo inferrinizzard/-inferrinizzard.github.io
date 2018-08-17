@@ -1,7 +1,8 @@
 function saveTextAsFile(){
     var title = document.getElementById("title").value;
     var video = document.getElementById("video").checked;
-    var image = parseInt(document.getElementById("image").value);
+		var image = parseInt(document.getElementById("image").value);
+		var imgTit = document.getElementById("imgTitle").value;
     var body = document.getElementById("body").value;
     var category =  document.getElementById("category").value;
     
@@ -10,7 +11,7 @@ function saveTextAsFile(){
 
     var article = newArticle(title, date, category);
 
-    var media = carousel(title, video, image);
+    var media = carousel(imgTit, video, image);
 
     var text = [title,body,date,category].join(" $ ") + " $ % " + article + " % @ " + media + " @ ";
 
