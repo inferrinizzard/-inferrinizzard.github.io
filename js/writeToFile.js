@@ -84,7 +84,8 @@ function carousel(imgTit, video, image){
         var videoWrap = document.createElement('div');
         videoWrap.className = "flex-item video-content embed-responsive embed-responsive-16by9";
         videoCItem.appendChild(videoWrap);
-        var videoElem = document.createElement('video');
+				var videoElem = document.createElement('video');
+				videoElem.controls = true;
         videoElem.src = "/img/" + imgTit + ".mp4"
         videoWrap.appendChild(videoElem);
         temp.appendChild(videoCItem);
@@ -107,15 +108,15 @@ function carousel(imgTit, video, image){
         imgElem.className = "d-block w-100";
 
         var iThumbli = document.createElement('li');
-        vThumbli.setAttribute('data-target', '#imgCarousel');
+        iThumbli.setAttribute('data-target', '#imgCarousel');
         var iThumbimg = document.createElement('img');
-        vThumbimg.className = "img-responsive";
+        iThumbimg.className = "img-responsive";
 
         if(i==1&&!video){
             imgCItem.classList.add("active");
             imgElem.src = "/img/" + imgTit + ".png";
 
-            iThumbli.setAttribute('data-slide-to', i);
+            iThumbli.setAttribute('data-slide-to', "0");
             iThumbli.className = "active";
             iThumbimg.src = "/img/" + imgTit + ".png";
         }
