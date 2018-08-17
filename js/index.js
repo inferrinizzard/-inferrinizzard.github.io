@@ -1,5 +1,6 @@
 var $window = $(window),
-	buttons = $('.button-group')[0];
+	buttons = $('#button-group')[0],
+	didScroll = false;
 
 $(function(){
  
