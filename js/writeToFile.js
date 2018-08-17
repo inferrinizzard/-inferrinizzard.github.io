@@ -40,7 +40,7 @@ function newArticle(titleText, dateText, type) {
     article.appendChild(link);
 
     var img = document.createElement('img');
-    var imgFile = "/img/"+titleText+".png";
+    var imgFile = "/img/"+imgTit+".png";
     img.src = imgFile;
     link.appendChild(img);
 
