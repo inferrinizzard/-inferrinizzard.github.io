@@ -122,7 +122,7 @@ function carousel(imgTit, video, image){
         }
         if(i>0){
             imgElem.src = "/img/" + imgTit + " (" + i + ").png";
-            iThumbli.setAttribute('data-slide-to', i-1);
+            iThumbli.setAttribute('data-slide-to', i);
             iThumbimg.src = "/img/" + imgTit + " (" + i + ").png";
         }
 
