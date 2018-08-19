@@ -1,3 +1,5 @@
+var nextPages = [];
+
 $(function(){
     var type = String($(".count").attr("id"));
     var anchor = $("#anchor");
@@ -9,5 +11,12 @@ $(function(){
     anchor.append(temp);
     temp = $("<div></div>");
     temp.load("/index.html ." + type + ":eq(2)").html();
-    anchor.append(temp);
-})
+		anchor.append(temp);
+		
+		$('.container-fluid').infiniteScroll({
+			path: function() {
+				return nextPages[ this.loadCount ] + '.html';
+			},
+			// options...
+		});
+});

@@ -170,13 +170,13 @@
 	}
 
 	.carousel{
-		.carousel-caption{
+		&-caption{
 		 top: 50%;
 		 transform: translateY(-50%);
 		 text-transform: initial;
 	 }
 
-	 .carousel-indicators{
+	 &-indicators{
 		margin: 0;
 		position: static;
 		text-align: left;
@@ -250,6 +250,12 @@
 				}
 
 				.fa-home, .fa-ellipsis-v{display: none;}
+			}
+		}
+
+		section#imgCarousel{
+			.carousel-inner{
+				max-height: 600px;
 			}
 		}
 
