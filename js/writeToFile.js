@@ -86,6 +86,7 @@ function carousel(imgTit, video, image){
         videoCItem.appendChild(videoWrap);
 				var videoElem = document.createElement('video');
 				videoElem.controls = true;
+				videoElem.id = "carouselVid";
         videoElem.src = "/img/" + imgTit + ".mp4"
         videoWrap.appendChild(videoElem);
         temp.appendChild(videoCItem);

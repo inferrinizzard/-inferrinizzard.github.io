@@ -177,7 +177,6 @@
 	 }
 
 	 &-indicators{
-		background-color: @off-white;
 		margin: 0;
 		position: static;
 		text-align: left;
@@ -255,8 +254,13 @@
 		}
 
 		section#imgCarousel.carousel{
+			background-color: @off-white;
 			.carousel-inner{
-				max-height: 600px;
+				img{
+					max-height: 600px;
+					max-width: 600px;
+					text-align: center;
+				}
 			}
 		}
 
