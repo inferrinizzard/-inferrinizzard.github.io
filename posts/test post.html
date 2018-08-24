@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>test post</title>
+  <link rel="icon" href="/img/sk.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="inferrinizzard.github.io">  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.bundle.min.js"></script>
+  
+	<link rel="stylesheet/less" href="/style.less">
+	<script src="/js/flickity.js"></script>
+  <script src="/js/less.min.js"></script>
+  <script src="/js/include.js"></script>
+  <script src="/js/post.js"></script>
+</head>
+
+<body>
+  <div include-html="/nav.html"></div>
+
+  <div class="main">
+    <div class="container-fluid row">
+      <div class="col-xs-12 col-md-8 content">
+        <br>
+        <h1>test post - 10/10/1000</h1>
+				<br>
+				<section class="carousel">
+					<div class="carousel-main">
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" alt="orange tree" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" alt="One World Trade" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" alt="drizzle" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" alt="cat nose" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" alt="contrail" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" alt="golden hour" />
+						</div>
+						<div class="carousel-cell">
+							<img id="vidHolder" src="/img/doublepend.png">
+							<video id="carouselVid" src="/img/doublepend.mp4" style="display: none;" controls>
+						</div>
+					</div>
+	
+					<div class="carousel-nav">
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" alt="orange tree" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" alt="One World Trade" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" alt="drizzle" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" alt="cat nose" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" alt="contrail" />
+						</div>
+						<div class="carousel-cell">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" alt="golden hour" />
+						</div>
+						<div class="carousel-cell">
+							<img src="/img/doublepend.png">
+						</div>
+					</div>
+				</section>
+        
+        <br>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum pariatur deserunt, fuga possimus, sed, expedita natus totam quam maxime error voluptatem nisi deleniti veritatis. Enim soluta odio suscipit provident praesentium?</h3>
+        <br>
+        <p class="count" id="unity">1</p>
+      </div>
+
+      <div class="col-md-4 side-bar">
+        <div class="sticky">
+          <h2>More like this</h2>
+          <div class="grid" id="anchor">
+            <div class="grid-sizer"></div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div include-html="/footer.html"></div>
+  <script>includeHTML();</script>
+</body>
+</html>

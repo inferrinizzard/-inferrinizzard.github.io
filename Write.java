@@ -22,12 +22,7 @@ public class Write{
         String article = content.substring(artIndices[0]+1, artIndices[1]).trim();
 
         int[] carIndices = findIndices(content, '@');
-        String carousel = content.substring(carIndices[0]+1, carIndices[1]).trim();
-        String thumbnails = content.substring(carIndices[1]+1, carIndices[2]).trim();
-        String media = carTemplate.get(0).trim() + carousel;
-        for(int i=17;i<25;i++)
-            media+=carTemplate.get(i).trim();
-        media+=thumbnails + carTemplate.get(carTemplate.size()-1).trim() + "<br>";
+        String media = content.substring(carIndices[0]+1, carIndices[1]).trim();
 
         for(int i=0;i<htmlFile.size();i++){
             String temp = htmlFile.get(i);
