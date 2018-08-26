@@ -162,7 +162,14 @@
 	}
 }
 
+body{
+	z-index: 0;
+	position: relative;
+}
+
 .main{
+	z-index: 1;
+	background-color: white;
 	margin-top: 70px;
 
 	.btn{
@@ -170,39 +177,6 @@
 
 		.button;
 	}
-
-// 	.carousel{
-// 		&-caption{
-// 		 top: 50%;
-// 		 transform: translateY(-50%);
-// 		 text-transform: initial;
-// 	 }
-
-// 	 &-indicators{
-// 		margin: 0;
-// 		position: static;
-// 		text-align: left;
-// 		width: 100%;
-
-// 		li {
-// 			background-color: transparent;
-// 			height: auto;
-// 			margin: 0;
-// 			width: auto;
-
-// 			img {
-// 				display: block;
-// 				opacity: 0.5;
-// 				max-height: 100px;
-// 				max-width: 100%;
-// 			}
-
-// 			&.active img{opacity: 1;}
-
-// 			&:hover img{opacity: .75;}
-// 		}
-// 	 }
-//  }
 
 	.container-fluid{
 		margin: 0;
@@ -343,26 +317,40 @@
 }
 
 footer{
+	position: relative;
+	text-align: center;
 	margin: 0;
 	.bg-green1;
 	width: 100%;
 	padding: 1%;
+	z-index: -2;
+	height: 238px;
 
-	.icon{
-	max-width: 200px;
-	margin: 1% auto;
-	}
+	.footer-wrapper{
+		margin: 0;
+		z-index: 0;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
 
-	.fab{
-		.button;
-		border: none !important;
-		padding: 6px;
-		font-size: 42pt;
-		margin: 5px;
-	
-		&:hover{
-			border-radius: 5px;
-			text-decoration: none;
+		.icon{
+			max-width: 200px;
+			margin: 1% auto;
+			}
+		
+		.fab{
+			.button;
+			border: none !important;
+			padding: 6px;
+			font-size: 42pt;
+			margin: 5px;
+		
+			&:hover{
+				border-radius: 5px;
+				text-decoration: none;
+			}
 		}
 	}
 }
