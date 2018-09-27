@@ -1,0 +1,38 @@
+@green: #00ab44;
+@mint: #53bb84;
+@gray-l: #666;
+@dark: #353744;
+
+h3{
+	color: @green;
+	margin-top: .75em;
+}
+
+.bar{
+	margin: 6px 0;
+	background-color: @mint;
+	height: 6px;
+}
+
+.header{
+	height: min-content;
+
+	.info{
+		float: right;
+		text-align: right;
+		display: inline-block;
+	}
+	.name{display: inline-block;}
+}
+
+.techskill{
+	span{display: inline-block;}
+}
+
+.subheader{
+	&:not(:first-child){margin-top: .5em;}
+	span{
+		&:not(:first-child){color: @gray-l;}
+		&:last-child{float: right;}
+	}
+}
