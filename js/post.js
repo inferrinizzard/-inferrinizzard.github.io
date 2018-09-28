@@ -30,7 +30,8 @@ function initCarousel(){
 		percentPosition: false,
 		pageDots: false,
 		wrapAround: true,
-		fullscreen: true
+		fullscreen: true,
+		adaptiveHeight: true
 	});
 		
 	$('.carousel-nav').flickity({
@@ -42,7 +43,7 @@ function initCarousel(){
 
 	var $carouselVid = $('#carouselVid');
 	$('#vidHolder').replaceWith($carouselVid);
-	$carouselVid[0].setAttribute("style","display: block;");
+	$carouselVid[0].setAttribute("style","display: block; max-height: 600px;");
 	
 	var $imgs = $carouselM.find('.carousel-cell img');
 	if($carouselM.find('.carousel-cell video').length>0){
