@@ -12,6 +12,10 @@
   overflow: hidden;
 }
 
+.carousel-main .carousel-cell img{
+	max-height: 600px;
+}
+
 .carousel-nav .carousel-cell {
   margin-right: 4px;
 }

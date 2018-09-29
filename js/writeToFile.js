@@ -82,27 +82,28 @@ function carousel(imgTit, video, image){
 		thumb.className = "carousel-nav";
 		
 		for(var i=1;i<=image;i++){
-			var temp = document.createAttribute('div');
-			temp.class = "carousel-cell";
+			var cell = document.createAttribute('div');
+			cell.class = "carousel-cell";
 			var img = document.createAttribute('img');
 			img.src = "/img/" + imgTit + " (" + i + ").png";
-			temp.appendChild(img);
-			main.appendChild(temp);
-			var temp2 = temp.cloneNode();
-			thumb.appendChild(temp2);
-			temp2.appendChild(img.cloneNode());
+			cell.appendChild(img);
+			main.appendChild(cell);
+			var cell2 = cell.cloneNode();
+			thumb.appendChild(cell2);
+			cell2.appendChild(img.cloneNode());
 		}
 		if(video){
-			var temp = document.createAttribute('div');
+			var cell = document.createAttribute('div');
+			cell.class = "carousel-cell";
 			var holder = document.createAttribute('img');
 			holder.src = "/img/" + imgTit + ".png";
 			holder.id = "vidHolder";
 			var vid = document.createAttribute('video');
 			vid.src = "/img/" + imgTit + ".mp4";
 			vid.id = "carouselVid";
-			temp.appendChild(holder);
-			temp.appendChild(vid);
-			main.appendChild(temp);
+			cell.appendChild(holder);
+			cell.appendChild(vid);
+			main.appendChild(cell);
 			thumb.appendChild(holder.cloneNode());
 		}
 		wrapper.appendChild(main);
