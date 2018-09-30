@@ -61,9 +61,9 @@ function initCarousel(){
 			if(0 === i){
 				x = Math.abs(flkty.x) > flkty.slidesWidth ? (flkty.slidesWidth + flkty.x + flkty.slides[flkty.slides.length-1].outerWidth + slide.target) : (slide.target + flkty.x);
 			} 
-			else if(i === flkty.slides.length-1){
-				x = Math.abs(flkty.x) + flkty.slides[i].outerWidth < flkty.slidesWidth ? (slide.target - flkty.slidesWidth + flkty.x - flkty.slides[i].outerWidth) : (slide.target + flkty.x);
-			}
+			// else if(i === flkty.slides.length-1){
+			// 	x = Math.abs(flkty.x) + flkty.slides[i].outerWidth < flkty.slidesWidth ? (slide.target - flkty.slidesWidth + flkty.x - flkty.slides[i].outerWidth) : (slide.target + flkty.x);
+			// }
 			else{
 				x = slide.target + flkty.x;
 			}
