@@ -37,3 +37,15 @@ h3{
 		&:last-child{float: right;}
 	}
 }
+
+@media (max-width: 572px){
+	.subheader{
+		&:not(:first-child){margin-top: .5em;}
+		span{
+			&:not(:first-child){display: block;}
+			&:last-child{float: left;}
+		}
+	}
+
+	.address div:first-child{padding-top: 10px;}
+}
