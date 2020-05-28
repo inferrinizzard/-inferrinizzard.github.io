@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<style>
+			.background {
+				fill: #7799ee;
+				pointer-events: all;
+			}
+
+			.map {
+				fill: #fff;
+				stroke: #000;
+			}
+
+			.inline {
+				display: inline-block;
+			}
+
+			path:hover {
+				fill: #f00;
+			}
+
+			/* The switch - the box around the slider */
+			.switch {
+				position: relative;
+				display: inline-block;
+				width: 60px;
+				height: 34px;
+			}
+
+			/* Hide default HTML checkbox */
+			.switch input {
+				opacity: 0;
+				width: 0;
+				height: 0;
+			}
+
+			/* The slider */
+			.slider {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #ccc;
+				transition: 0.4s;
+			}
+
+			.slider:before {
+				position: absolute;
+				content: "";
+				height: 26px;
+				width: 26px;
+				left: 4px;
+				bottom: 4px;
+				background-color: white;
+				transition: 0.4s;
+			}
+
+			input:checked + .slider {
+				background-color: #2196f3;
+			}
+
+			input:focus + .slider {
+				box-shadow: 0 0 1px #2196f3;
+			}
+
+			input:checked + .slider:before {
+				transform: translateX(26px);
+			}
+
+			/* Rounded sliders */
+			.slider.round {
+				border-radius: 34px;
+			}
+
+			.slider.round:before {
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body style="margin: 0;">
+		<svg class="inline" id="japan"></svg>
+		<div class="inline" style="vertical-align: top;">
+			<h1 style="font-size: 25pt;">Japan, Domestic Population Statistics, 2014</h1>
+			<div>
+				<h1 class="inline">English</h1>
+				<label class="switch inline">
+					<input id="japanese" type="checkbox" />
+					<span class="slider round"></span>
+				</label>
+				<h1 class="inline">日本語</h1>
+			</div>
+			<h1 id="title" style="font-size: 45pt;">Japan</h1>
+			<div>
+				<h1 class="inline" id="subtitle" style="font-size: 30pt;">Live Births:</h1>
+				<h1 class="inline" id="value" style="font-size: 30pt;">Decreasing, probably</h1>
+			</div>
+			<form id="radio"></form>
+			<div style="vertical-align: bottom;">
+				<h1 id="title" style="font-size: 10pt;">Sean Song</h1>
+				<h1 id="title" style="font-size: 10pt;">Instructor: Suresh Lodha</h1>
+				<h1 id="title" style="font-size: 10pt;">CSE 163: Data programming for Visualization</h1>
+				<h1 id="title" style="font-size: 10pt;">Spring 2020</h1>
+			</div>
+		</div>
+
+		<script src="https://d3js.org/d3-color.v1.min.js"></script>
+		<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+		<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+		<script src="https://d3js.org/topojson.v3.min.js"></script>
+		<script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="./japan.js"></script>
+	</body>
+</html>
